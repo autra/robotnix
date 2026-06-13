@@ -1,51 +1,64 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Robotnix</title>
-                <meta name="robots" content="noindex" />
-                
+        <meta name="robots" content="noindex">
+
 
         <!-- Custom HTML head -->
-        
 
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
-        
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
-        
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        
-            </head>
-    <body>
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
 
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-aeb4db28.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-ca3cf735.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -58,91 +71,109 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            html.classList.add("js");
         </script>
 
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome to robotnix</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">2.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="modules/flavors.html"><strong aria-hidden="true">2.1.</strong> Flavors</a></li><li class="chapter-item expanded "><a href="modules/f-droid.html"><strong aria-hidden="true">2.2.</strong> F-Droid</a></li><li class="chapter-item expanded "><a href="modules/seedvault.html"><strong aria-hidden="true">2.3.</strong> Seedvault Backup</a></li><li class="chapter-item expanded "><a href="modules/microg.html"><strong aria-hidden="true">2.4.</strong> MicroG</a></li><li class="chapter-item expanded "><a href="modules/ota.html"><strong aria-hidden="true">2.5.</strong> Over-the-Air (OTA) Updater</a></li><li class="chapter-item expanded "><a href="modules/browsers.html"><strong aria-hidden="true">2.6.</strong> Browsers / Webview</a></li><li class="chapter-item expanded "><a href="modules/attestation.html"><strong aria-hidden="true">2.7.</strong> Remote Attestation</a></li><li class="chapter-item expanded "><a href="modules/prebuilt.html"><strong aria-hidden="true">2.8.</strong> Prebuilt Apps</a></li><li class="chapter-item expanded "><a href="modules/source.html"><strong aria-hidden="true">2.9.</strong> Source Directories</a></li><li class="chapter-item expanded "><a href="modules/other.html"><strong aria-hidden="true">2.10.</strong> Other Modules</a></li></ol></li><li class="chapter-item expanded "><a href="building.html"><strong aria-hidden="true">3.</strong> Building</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">4.</strong> Installation / Updating</a></li><li class="chapter-item expanded "><a href="development.html"><strong aria-hidden="true">5.</strong> Development</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Reference</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="options.html"><strong aria-hidden="true">6.1.</strong> Options</a></li></ol></li></ol>            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
-                                            </div>
+                    </div>
 
                     <h1 class="menu-title">Robotnix</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
-                                                                        
+
                     </div>
                 </div>
 
-                                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
-                
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
                         <!--
 SPDX-FileCopyrightText: 2021 Daniel Fullmer and robotnix contributors
@@ -153,9 +184,9 @@ SPDX-License-Identifier: MIT
 manager.  Instead of having to follow complicated instructions to install
 several build tools and fetch source code from multiple sources, robotnix
 encapsulates all this complexity in a simple Nix expression.</p>
-<p>The documentation included here should help inform you how to <a href="configuration.html">create your configuration file</a>,
-<a href="building.html">build your Android image</a>,
-and <a href="installation.html">install the image onto your phone</a>.</p>
+<p>The documentation included here should help inform you how to <a href="#configuration">create your configuration file</a>,
+<a href="#building">build your Android image</a>,
+and <a href="#installing-for-the-first-time-with-optional-verified-boot">install the image onto your phone</a>.</p>
 <p>If you find parts of this manual confusing, please create an issue, or (even better) create a pull request on Github.
 Robotnix users and developers can also be contacted on <code>#robotnix:nixos.org</code> on Matrix.</p>
 <div style="break-before: page; page-break-before: always;"></div><!--
@@ -163,33 +194,33 @@ SPDX-FileCopyrightText: 2021 Daniel Fullmer and robotnix contributors
 SPDX-License-Identifier: MIT
 -->
 <h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
-<p>Similarly to <a href="https://nixos.org/">NixOS</a>, robotnix configurations are &quot;Nix expressions&quot; specified using the &quot;<a href="https://nixos.org/manual/nix/stable/#ch-expression-language">Nix language</a>.&quot;
+<p>Similarly to <a href="https://nixos.org/">NixOS</a>, robotnix configurations are “Nix expressions” specified using the “<a href="https://nixos.org/manual/nix/stable/#ch-expression-language">Nix language</a>.”
 Most end-user uses of robotnix should not require learning the Nix language, besides the very basics of syntax.</p>
 <h2 id="inline-configuration"><a class="header" href="#inline-configuration">Inline Configuration</a></h2>
 <p>Robotnix can be built using configuration specified on the command line using <code>--arg configuration ...</code> as an argument to <code>nix-build</code>.
 For example, if the current directory contains a checked out copy of robotnix, the following will produce a vanilla image for the crosshatch device (Pixel 3 XL):</p>
-<pre><code class="language-shell">$ nix-build --arg configuration '{ device=&quot;crosshatch&quot;; flavor=&quot;vanilla&quot;; }' -A img
+<pre><code class="language-shell">$ nix-build --arg configuration '{ device="crosshatch"; flavor="vanilla"; }' -A img
 </code></pre>
 <p>By default, <code>nix-build</code> uses the <code>default.nix</code> in the current directory as the Nix entry point.
 If robotnix is checked out in another directory, such as <code>$HOME/src/robotnix</code>, the above command could instead be</p>
-<pre><code class="language-shell">$ nix-build $HOME/src/robotnix --arg configuration '{ device=&quot;crosshatch&quot;; flavor=&quot;vanilla&quot;; }' -A img
+<pre><code class="language-shell">$ nix-build $HOME/src/robotnix --arg configuration '{ device="crosshatch"; flavor="vanilla"; }' -A img
 </code></pre>
 <h2 id="configuration-files"><a class="header" href="#configuration-files">Configuration Files</a></h2>
 <p>A configuration file should be created for anything more complicated than the very simple configurations that could be conveniently specified on the command line.
 The following is an example robotnix configuration that could be saved to (for example) <code>crosshatch.nix</code>.</p>
 <pre><code class="language-nix">{
   # Most uses of robotnix should at least set the device and flavor options.
-  device = &quot;crosshatch&quot;;
-  flavor = &quot;vanilla&quot;;
+  device = "crosshatch";
+  flavor = "vanilla";
 
-  # variant = &quot;user&quot;; # Other options are userdebug, or eng. Builds used in production should use &quot;user&quot;
+  # variant = "user"; # Other options are userdebug, or eng. Builds used in production should use "user"
 
   # Signing should be enabled for builds used in production.
   signing.enable = true;
   # When signing is enabled, keyStorePath should refer to a path containing keys created by `genereteKeysScript`
   # This is used to automatically obtain key fingerprints / metadata from the generated public keys.
   # Alternatively, it may be possible to manually set the required options like `signing.avb.fingerprint` or `apps.prebuilt.&lt;name&gt;.fingerprint` to avoid including this path.
-  signing.keyStorePath = &quot;/var/secrets/android-keys&quot;;
+  signing.keyStorePath = "/var/secrets/android-keys";
 
   # Additional modules can be enabled and included in the build. See individual module documentation
   apps.fdroid.enable = true;
@@ -201,7 +232,7 @@ If the above configuration was saved to <code>crosshatch.nix</code> in the local
 <pre><code class="language-shell">$ nix-build --arg configuration ./crosshatch.nix -A img
 </code></pre>
 <p>See my own configuration under <code>example.nix</code> for inspiration.
-Reference documentation of the available options is <a href="options.html">here</a>.</p>
+Reference documentation of the available options is <a href="#robotnix-configuration-options">here</a>.</p>
 <h2 id="flakes-experimental"><a class="header" href="#flakes-experimental">Flakes (experimental)</a></h2>
 <p>Nix flakes are an upcoming feature of Nix that provides an alternative configuration structure for use with the new <code>nix</code> command.
 It can provide the benefit of explicitly pinning your robotnix configuration against a particular revision of the robotnix repository.
@@ -214,8 +245,9 @@ $ nix flake init -t github:danielfullmer/robotnix
 $ # Edit flake.nix in current directory
 $ nix build .#robotnixConfigurations.dailydriver.img
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="flavors"><a class="header" href="#flavors">Flavors</a></h1>
-<p>In normal usage, the user needs to select a robotnix &quot;flavor&quot; in their configuration file by setting the <code>flavor</code> option.
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="flavors"><a class="header" href="#flavors">Flavors</a></h1>
+<p>In normal usage, the user needs to select a robotnix “flavor” in their configuration file by setting the <code>flavor</code> option.
 Flavors may change the default settings of some other modules, which might not match the default setting shown on the <a href="modules/options.html">Options</a> reference page.
 As an example, the GrapheneOS flavor enables <code>apps.vanadium.enable</code> by default.
 For further details, consult the implementation of the flavor under (for example) <code>flavors/grapheneos/*</code>.</p>
@@ -224,54 +256,84 @@ If a robotnix flavor supports multiple Android versions (either older or experim
 this can be overridden by setting (for example) <code>androidVersion = 11</code>.</p>
 <h2 id="vanilla"><a class="header" href="#vanilla">Vanilla</a></h2>
 <p>The vanilla flavor is meant to represent a (mostly) unaltered version of the AOSP code published by Google.
-Vanilla AOSP support may be enabled by setting <code>flavor = &quot;vanilla&quot;;</code>.
+Vanilla AOSP support may be enabled by setting <code>flavor = "vanilla";</code>.
 It does, however, include some small fixes and usability improvements.
 Enabling the vanilla flavor also enables the chromium webview/app by default as well.</p>
 <p>The vanilla flavor in robotnix currently supports only Pixel phones which still receive updates from Google (&gt;= Pixel 3a).
 Older Pixel phones (e.g. <code>marlin</code> / Pixel 1 XL) may be still be built by overriding <code>androidVersion = 10;</code>.
 However, these might be removed in the future as they are no longer receiving device updates from Google.</p>
 <p>The vanilla flavor retains working support for Android Verified Boot,
-and allows a user to re-lock the bootloader using the user's own generated root of trust.</p>
+and allows a user to re-lock the bootloader using the user’s own generated root of trust.</p>
 <h2 id="grapheneos"><a class="header" href="#grapheneos">GrapheneOS</a></h2>
 <p>GrapheneOS is a privacy and security focused mobile OS with Android app compatibility developed as a non-profit open source project.
-GrapheneOS support may be enabled by setting <code>flavor = &quot;grapheneos&quot;;</code>.
+GrapheneOS support may be enabled by setting <code>flavor = "grapheneos";</code>.
 Enabling the GrapheneOS flavor will also enable the Vanadium app/webview and Seedvault robotnix modules.
 Additionally, the upstream GrapheneOS updater is disabled,
-but the robotnix updater app (based on the GrapheneOS updater app) can be enabled by setting <code>apps.updater.enable = true;</code> and <code>apps.updater.url = &quot;...&quot;;</code>.</p>
+but the robotnix updater app (based on the GrapheneOS updater app) can be enabled by setting <code>apps.updater.enable = true;</code> and <code>apps.updater.url = "...";</code>.</p>
 <p>The user should understand that enabling certain robotnix modules may have security implications as they produce a may produce a larger attack surface than is intended by the GrapheneOS project.
 Some modules, such as the MicroG and the F-Droid privileged extension, have been explicitly rejected by upstream GrapheneOS.
 If the user wishes to enable these modules, they should understand and be willing to accept the usability/security tradeoffs.</p>
 <p>GrapheneOS releases are tagged in robotnix, but before 2021.05.16.04, the date suffix (YY.MM.DD.HH) did not match the one used in the upstream release.
-Only the latest GrapheneOS release is included with robotnix, even if that release is only a &quot;beta&quot; release upstream.
-If you would prefer to stick to only stable releases, wait until the release is marked &quot;stable&quot; upstream.</p>
+Only the latest GrapheneOS release is included with robotnix, even if that release is only a “beta” release upstream.
+If you would prefer to stick to only stable releases, wait until the release is marked “stable” upstream.</p>
 <p>Before reporting bugs to upstream GrapheneOS, please ensure that you can reproduce your issue using the official GrapheneOS images.
 Alternatively, feel free to ask about your issue on the <code>#robotnix:nixos.org</code> channel on Matrix.</p>
 <h2 id="lineageos"><a class="header" href="#lineageos">LineageOS</a></h2>
 <p>LineageOS is a free and open-source operating system for various devices, based on the Android mobile platform.
-LineageOS support may be enabled by setting <code>flavor = &quot;lineageos&quot;;</code>.
+LineageOS support may be enabled by setting <code>flavor = "lineageos";</code>.
 At the time of writing, this includes support for ~160 devices.</p>
-<p>Robotnix includes support for both LineageOS 17.1 as well as LineageOS 18.1.
+<p>Robotnix includes support for LineageOS 20.0 to 22.1 (some older releases are also present but unmaintained).
 By default, robotnix will select the latest supported version for the device specified in the configuration.
-This can be overridden by setting <code>androidVersion</code> to either 10 or 11, for LineageOS 17.1 and 18.1, respectively.</p>
+This can be overridden by setting the corresponding <code>androidVersion</code>. Here is the correspondance table of the supported Robotnix version:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th><code>androidVersion</code></th><th>LineageOS version</th></tr>
+</thead>
+<tbody>
+<tr><td>10</td><td>17.1</td></tr>
+<tr><td>11</td><td>18.1</td></tr>
+<tr><td>12</td><td>19.1</td></tr>
+<tr><td>13</td><td>20.0</td></tr>
+<tr><td>14</td><td>21.0</td></tr>
+<tr><td>15</td><td>22.1</td></tr>
+</tbody>
+</table>
+</div>
 <p>Since LineageOS does not produce tagged releases like vanilla AOSP or GrapheneOS,
 we periodically take snapshots of the upstream repositories and include metadata in robotnix which pins the source repositories to particular revisions.
 This metadata can be found under <code>flavors/lineageos/*/*.json</code>.</p>
-<p>LineageOS support in robotnix should be considered &quot;experimental,&quot; as it does yet have the same level of support provided for <code>vanilla</code> and <code>grapheneos</code> flavors.
+<p>LineageOS support in robotnix should be considered “experimental,” as it does yet have the same level of support provided for <code>vanilla</code> and <code>grapheneos</code> flavors.
 LineageOS source metadata may be updated irregularly in robotnix, and certain modules (such as the updater) are not guaranteed to work.
 Moreover, LineageOS does not appear to provide the same level of security as even the vanilla flavor, as it disables dm-verity/AVB, sets <code>userdebug</code> as the default variant, and uses vendor files with unclear origin.
 LineageOS support is still valuable to include as it extends support to a much wider variety of devices, and provides the base that many other Android ROMs use to customize.
 Contributions and fixes from LineageOS users are especially welcome!</p>
-<p>For devices with &quot;boot-as-recovery&quot;, the typical LineageOS flashing process involves first producing a <code>boot.img</code> and <code>ota</code>, flashing <code>boot.img</code> with fastboot, and then sideloading the <code>ota</code> in recovery mode.
+<p>For devices with “boot-as-recovery”, the typical LineageOS flashing process involves first producing a <code>boot.img</code> and <code>ota</code>, flashing <code>boot.img</code> with fastboot, and then sideloading the <code>ota</code> in recovery mode.
 The <code>boot.img</code> and <code>ota</code> targets can be built using <code>nix-build ... -A bootImg</code> or <code>nix-build ... -A ota</code>, respectively.
 Check the upstream documentation for your particular device before following the above instructions.</p>
+<p>To add a support for a particular device, add its code to <code>./flavors/lineageos/supported_devices.toml</code>, then run <code>nix-shell</code>, then <code>./flavors/lineageos/update.sh -s &lt;lineageos_branch&gt;</code>.</p>
+<h3 id="note-on-signing"><a class="header" href="#note-on-signing">Note on signing</a></h3>
+<p>When you build a LineageOS image, the system image is cryptographically signed by default. There are three options concerning the keys the image can be signed with:</p>
+<ul>
+<li>the official LineageOS keys (release-keys). We don’t have access to them, so the only images signed with these keys are the official LineageOS builds. If you previously installed LineageOS from official sources, these are the keys you are currently using.</li>
+<li>the test keys (test-keys). These keys are publicly available, and Robotnix uses them by default.</li>
+<li>your own release keys. Please see <a href="#building-and-signing-releases">the relevant section in the Building page</a>.</li>
+</ul>
+<p>When you run LineageOS and install apps that save stuff to your phone, that data is “coupled” to the keys your LineageOS install was signed with. If you try to boot a LineageOS install with an image that was signed with different build keys than the ones your user data was coupled to, it will complain and not boot at best (or you’ll loose all your data at worse).</p>
+<p>In that case, you have two options:</p>
+<ul>
+<li>you can wipe your userdata partition and start over with the new keys</li>
+<li>or you can migrate your userdata from the keys of your old install to your new install</li>
+</ul>
+<p>To do the latter, please see <a href="https://wiki.lineageos.org/signing_builds#using-a-script">the official documentation</a>.</p>
 <h2 id="anbox"><a class="header" href="#anbox">Anbox</a></h2>
 <p>Anbox is a Free and open-source container-based approach at running Android on Linux systems.
-Anbox support may be enabled by setting <code>flavor = &quot;anbox&quot;;</code>.</p>
+Anbox support may be enabled by setting <code>flavor = "anbox";</code>.</p>
 <p>At the time of writing, support is experimental.
 Given that Anbox is based on an older Android release (7), support for Robotnix options is not guaranteed.</p>
 <h2 id="waydroid"><a class="header" href="#waydroid">Waydroid</a></h2>
 <p>Waydroid is a Free and open-source container-based approach at running Android on Linux systems.
-Waydroid support may be enabled by setting device and flavor, e.g. <code>device=&quot;x86_64&quot;; flavor=&quot;waydroid&quot;;</code>.
+Waydroid support may be enabled by setting device and flavor, e.g. <code>device="x86_64"; flavor="waydroid";</code>.
 LineageOS based system/vendor images can be built using <code>nix-build ... -A config.build.waydroid</code>.</p>
 <p>At the time of writing, support is experimental.</p>
 <div style="break-before: page; page-break-before: always;"></div><!--
@@ -284,28 +346,28 @@ SPDX-License-Identifier: MIT
     apps.fdroid.enable = true;
 }
 </code></pre>
-<p>The F-Droid privileged extension enables F-Droid to install and delete apps without needing &quot;Unknown Sources&quot; to be enabled (e.g. just like Google Play does).
-It also enables F-Droid to install updates in the background without the user having to click &quot;install&quot;.</p>
+<p>The F-Droid privileged extension enables F-Droid to install and delete apps without needing “Unknown Sources” to be enabled (e.g. just like Google Play does).
+It also enables F-Droid to install updates in the background without the user having to click “install”.</p>
 <h2 id="adding-f-droid-repositories"><a class="header" href="#adding-f-droid-repositories">Adding F-Droid repositories</a></h2>
 <p>F-Droid can manage multiple repositories to fetch apps from.  These can be set
 up manually in the app, but with robotnix it is also possible to preload
 F-Droid with some repositories at build time.</p>
 <p>To add an F-Droid repository you need at least the URL and a public key.
-Obtaining the URL is in general very easy but it's not obvious where to obtain
+Obtaining the URL is in general very easy but it’s not obvious where to obtain
 the public key.</p>
-<p>We'll take the microG repository as an example.  The repository is located
+<p>We’ll take the microG repository as an example.  The repository is located
 <a href="https://microg.org/fdroid/repo">here</a>.  To obtain the repository index
 download the <code>index.xml</code> file from the repository root:</p>
 <pre><code class="language-console">$ curl -LO https://microg.org/fdroid/repo/index.xml
 </code></pre>
 <p>The content of this XML file contains metadata about the repository, including
 the public key:</p>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;fdroid&gt;
-	&lt;repo name=&quot;microG F-Droid repo&quot; icon=&quot;fdroid-icon.png&quot; url=&quot;https://microg.org/fdroid/repo&quot; version=&quot;19&quot; timestamp=&quot;1606314565&quot; pubkey=&quot;308202ed308201d5a003020102020426ffa009300d06092a864886f70d01010b05003027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a656374301e170d3132313030363132303533325a170d3337303933303132303533325a3027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a65637430820122300d06092a864886f70d01010105000382010f003082010a02820101009a8d2a5336b0eaaad89ce447828c7753b157459b79e3215dc962ca48f58c2cd7650df67d2dd7bda0880c682791f32b35c504e43e77b43c3e4e541f86e35a8293a54fb46e6b16af54d3a4eda458f1a7c8bc1b7479861ca7043337180e40079d9cdccb7e051ada9b6c88c9ec635541e2ebf0842521c3024c826f6fd6db6fd117c74e859d5af4db04448965ab5469b71ce719939a06ef30580f50febf96c474a7d265bb63f86a822ff7b643de6b76e966a18553c2858416cf3309dd24278374bdd82b4404ef6f7f122cec93859351fc6e5ea947e3ceb9d67374fe970e593e5cd05c905e1d24f5a5484f4aadef766e498adf64f7cf04bddd602ae8137b6eea40722d0203010001a321301f301d0603551d0e04160414110b7aa9ebc840b20399f69a431f4dba6ac42a64300d06092a864886f70d01010b0500038201010007c32ad893349cf86952fb5a49cfdc9b13f5e3c800aece77b2e7e0e9c83e34052f140f357ec7e6f4b432dc1ed542218a14835acd2df2deea7efd3fd5e8f1c34e1fb39ec6a427c6e6f4178b609b369040ac1f8844b789f3694dc640de06e44b247afed11637173f36f5886170fafd74954049858c6096308fc93c1bc4dd5685fa7a1f982a422f2a3b36baa8c9500474cf2af91c39cbec1bc898d10194d368aa5e91f1137ec115087c31962d8f76cd120d28c249cf76f4c70f5baa08c70a7234ce4123be080cee789477401965cfe537b924ef36747e8caca62dfefdd1a6288dcb1c4fd2aaa6131a7ad254e9742022cfd597d2ca5c660ce9e41ff537e5a4041e37&quot;&gt;
+	&lt;repo name="microG F-Droid repo" icon="fdroid-icon.png" url="https://microg.org/fdroid/repo" version="19" timestamp="1606314565" pubkey="308202ed308201d5a003020102020426ffa009300d06092a864886f70d01010b05003027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a656374301e170d3132313030363132303533325a170d3337303933303132303533325a3027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a65637430820122300d06092a864886f70d01010105000382010f003082010a02820101009a8d2a5336b0eaaad89ce447828c7753b157459b79e3215dc962ca48f58c2cd7650df67d2dd7bda0880c682791f32b35c504e43e77b43c3e4e541f86e35a8293a54fb46e6b16af54d3a4eda458f1a7c8bc1b7479861ca7043337180e40079d9cdccb7e051ada9b6c88c9ec635541e2ebf0842521c3024c826f6fd6db6fd117c74e859d5af4db04448965ab5469b71ce719939a06ef30580f50febf96c474a7d265bb63f86a822ff7b643de6b76e966a18553c2858416cf3309dd24278374bdd82b4404ef6f7f122cec93859351fc6e5ea947e3ceb9d67374fe970e593e5cd05c905e1d24f5a5484f4aadef766e498adf64f7cf04bddd602ae8137b6eea40722d0203010001a321301f301d0603551d0e04160414110b7aa9ebc840b20399f69a431f4dba6ac42a64300d06092a864886f70d01010b0500038201010007c32ad893349cf86952fb5a49cfdc9b13f5e3c800aece77b2e7e0e9c83e34052f140f357ec7e6f4b432dc1ed542218a14835acd2df2deea7efd3fd5e8f1c34e1fb39ec6a427c6e6f4178b609b369040ac1f8844b789f3694dc640de06e44b247afed11637173f36f5886170fafd74954049858c6096308fc93c1bc4dd5685fa7a1f982a422f2a3b36baa8c9500474cf2af91c39cbec1bc898d10194d368aa5e91f1137ec115087c31962d8f76cd120d28c249cf76f4c70f5baa08c70a7234ce4123be080cee789477401965cfe537b924ef36747e8caca62dfefdd1a6288dcb1c4fd2aaa6131a7ad254e9742022cfd597d2ca5c660ce9e41ff537e5a4041e37"&gt;
 		&lt;description&gt;This is a repository of microG apps to be used with F-Droid. Applications in this repository are signed official binaries built by the microG Team from the corresponding source code. &lt;/description&gt;
 	&lt;/repo&gt;
-	&lt;application id=&quot;...&quot;&gt;
+	&lt;application id="..."&gt;
 		&lt;!-- ... list of contained applications ... --&gt;
 	&lt;/application&gt;
 &lt;/fdroid&gt;
@@ -314,10 +376,10 @@ the public key:</p>
 key for the corresponding Nix expression respectively.</p>
 <pre><code class="language-nix">{
   apps.fdroid.additionalRepos = {
-    &quot;microG F-Droid repo&quot; = {
+    "microG F-Droid repo" = {
       enable = true;
-      url = &quot;https://microg.org/fdroid/repo&quot;;
-      pubkey = &quot;308202ed308201d5a003020102020426ffa009300d06092a864886f70d01010b05003027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a656374301e170d3132313030363132303533325a170d3337303933303132303533325a3027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a65637430820122300d06092a864886f70d01010105000382010f003082010a02820101009a8d2a5336b0eaaad89ce447828c7753b157459b79e3215dc962ca48f58c2cd7650df67d2dd7bda0880c682791f32b35c504e43e77b43c3e4e541f86e35a8293a54fb46e6b16af54d3a4eda458f1a7c8bc1b7479861ca7043337180e40079d9cdccb7e051ada9b6c88c9ec635541e2ebf0842521c3024c826f6fd6db6fd117c74e859d5af4db04448965ab5469b71ce719939a06ef30580f50febf96c474a7d265bb63f86a822ff7b643de6b76e966a18553c2858416cf3309dd24278374bdd82b4404ef6f7f122cec93859351fc6e5ea947e3ceb9d67374fe970e593e5cd05c905e1d24f5a5484f4aadef766e498adf64f7cf04bddd602ae8137b6eea40722d0203010001a321301f301d0603551d0e04160414110b7aa9ebc840b20399f69a431f4dba6ac42a64300d06092a864886f70d01010b0500038201010007c32ad893349cf86952fb5a49cfdc9b13f5e3c800aece77b2e7e0e9c83e34052f140f357ec7e6f4b432dc1ed542218a14835acd2df2deea7efd3fd5e8f1c34e1fb39ec6a427c6e6f4178b609b369040ac1f8844b789f3694dc640de06e44b247afed11637173f36f5886170fafd74954049858c6096308fc93c1bc4dd5685fa7a1f982a422f2a3b36baa8c9500474cf2af91c39cbec1bc898d10194d368aa5e91f1137ec115087c31962d8f76cd120d28c249cf76f4c70f5baa08c70a7234ce4123be080cee789477401965cfe537b924ef36747e8caca62dfefdd1a6288dcb1c4fd2aaa6131a7ad254e9742022cfd597d2ca5c660ce9e41ff537e5a4041e37&quot;;
+      url = "https://microg.org/fdroid/repo";
+      pubkey = "308202ed308201d5a003020102020426ffa009300d06092a864886f70d01010b05003027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a656374301e170d3132313030363132303533325a170d3337303933303132303533325a3027310b300906035504061302444531183016060355040a130f4e4f47415050532050726f6a65637430820122300d06092a864886f70d01010105000382010f003082010a02820101009a8d2a5336b0eaaad89ce447828c7753b157459b79e3215dc962ca48f58c2cd7650df67d2dd7bda0880c682791f32b35c504e43e77b43c3e4e541f86e35a8293a54fb46e6b16af54d3a4eda458f1a7c8bc1b7479861ca7043337180e40079d9cdccb7e051ada9b6c88c9ec635541e2ebf0842521c3024c826f6fd6db6fd117c74e859d5af4db04448965ab5469b71ce719939a06ef30580f50febf96c474a7d265bb63f86a822ff7b643de6b76e966a18553c2858416cf3309dd24278374bdd82b4404ef6f7f122cec93859351fc6e5ea947e3ceb9d67374fe970e593e5cd05c905e1d24f5a5484f4aadef766e498adf64f7cf04bddd602ae8137b6eea40722d0203010001a321301f301d0603551d0e04160414110b7aa9ebc840b20399f69a431f4dba6ac42a64300d06092a864886f70d01010b0500038201010007c32ad893349cf86952fb5a49cfdc9b13f5e3c800aece77b2e7e0e9c83e34052f140f357ec7e6f4b432dc1ed542218a14835acd2df2deea7efd3fd5e8f1c34e1fb39ec6a427c6e6f4178b609b369040ac1f8844b789f3694dc640de06e44b247afed11637173f36f5886170fafd74954049858c6096308fc93c1bc4dd5685fa7a1f982a422f2a3b36baa8c9500474cf2af91c39cbec1bc898d10194d368aa5e91f1137ec115087c31962d8f76cd120d28c249cf76f4c70f5baa08c70a7234ce4123be080cee789477401965cfe537b924ef36747e8caca62dfefdd1a6288dcb1c4fd2aaa6131a7ad254e9742022cfd597d2ca5c660ce9e41ff537e5a4041e37";
     };
   };
 }
@@ -327,7 +389,8 @@ that shows up before refreshing the F-Droid repo list for the first time, so if
 you want that to look pretty, give it a pretty name here.</p>
 <p>The <code>apps.fdroid.additionalRepos</code> variable is only used to prepopulate the internal database of F-Droid repositories upon the first run of the application.
 Changes to this variable will not have any effect on phones that have already started the F-Droid application.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="seedvault-backup"><a class="header" href="#seedvault-backup">Seedvault Backup</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="seedvault-backup"><a class="header" href="#seedvault-backup">Seedvault Backup</a></h1>
 <p><a href="https://github.com/seedvault-app/seedvault">Seedvault</a> is a backup application for the Android Open Source Project.
 The following configuration will enable the Seedvault:</p>
 <pre><code class="language-nix">{
@@ -335,7 +398,7 @@ The following configuration will enable the Seedvault:</p>
 }
 </code></pre>
 <h2 id="backing-up"><a class="header" href="#backing-up">Backing Up</a></h2>
-<p>Normally, the settings for the Seedvault backup application is available under &quot;Settings -&gt; System -&gt; Backup&quot;.
+<p>Normally, the settings for the Seedvault backup application is available under “Settings -&gt; System -&gt; Backup”.
 However, if you have flashed a new ROM including Seedvault over one which did not have Seedvault initially (without wiping userdata), you may need to manually set the backup transport using <code>adb</code>.</p>
 <pre><code class="language-shell">$ adb shell bmgr enable true
 $ adb shell bmgr transport com.stevesoltys.seedvault.transport.ConfigurableBackupTransport
@@ -357,18 +420,19 @@ MicroG support may be enabled using:</p>
   microg.enable = true;
 }
 </code></pre>
-<p>MicroG requires a patch to the Android system to allow spoofing Google's signature for MicroG's reimplemented version of Google services.
+<p>MicroG requires a patch to the Android system to allow spoofing Google’s signature for MicroG’s reimplemented version of Google services.
 The patch included in robotnix locks down this signature spoofing functionality to only the MicroG application and the Google signatures.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="over-the-air-ota-updater"><a class="header" href="#over-the-air-ota-updater">Over-the-Air (OTA) Updater</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="over-the-air-ota-updater"><a class="header" href="#over-the-air-ota-updater">Over-the-Air (OTA) Updater</a></h1>
 <p>The following robotnix configuration enables the <a href="https://github.com/GrapheneOS/platform_packages_apps_Updater">OTA updater app</a>.</p>
 <pre><code class="language-nix">{
     apps.updater.enable = true;
-    apps.updater.url = &quot;...&quot;;
+    apps.updater.url = "...";
 }
 </code></pre>
 <p>The <code>apps.updater.url</code> setting needs to point to a URL hosting the OTA files described below.</p>
 <p>Additionally, the <code>buildDateTime</code> option is set by default by the flavor, and is updated when those flavors have new releases.
-If you make new changes to your build that you want to be pushed by the OTA updater, you should set <code>buildDateTime</code> yourself, using <code>date &quot;+%s&quot;</code> to get the current time.</p>
+If you make new changes to your build that you want to be pushed by the OTA updater, you should set <code>buildDateTime</code> yourself, using <code>date "+%s"</code> to get the current time.</p>
 <h2 id="building-ota-updates"><a class="header" href="#building-ota-updates">Building OTA updates</a></h2>
 <p>The OTA file and metadata can be generated as part of the <code>releaseScript</code>
 output.  If you are signing builds inside Nix using the sandbox exception,
@@ -400,7 +464,7 @@ OTA updates from:</p>
 {
   apps = {
     updater.enable = true;
-    updater.url = &quot;https://example.com/android/&quot;;
+    updater.url = "https://example.com/android/";
   };
 }
 </code></pre>
@@ -409,13 +473,13 @@ endpoint:</p>
 <pre><code class="language-nix"># NixOS server configuration
 {
   services.nginx.enable = true;
-  systemd.services.nginx.serviceConfig.ReadOnlyPaths = [ &quot;/var/www&quot; ];
-  services.nginx.virtualHosts.&quot;example.com&quot; = {
+  systemd.services.nginx.serviceConfig.ReadOnlyPaths = [ "/var/www" ];
+  services.nginx.virtualHosts."example.com" = {
     forceSSL = true;
     enableACME = true;
-    locations.&quot;/android/&quot; = {
-      root = &quot;/var/www&quot;;
-      tryFiles = &quot;$uri $uri/ =404&quot;;
+    locations."/android/" = {
+      root = "/var/www";
+      tryFiles = "$uri $uri/ =404";
     };
   };
 }
@@ -434,7 +498,7 @@ $ tree -l /var/www
     ├── sunfish-stable -&gt; /nix/store/c1rp46m9spncanacglqs5mxk6znfs44s-sunfish-stable
     └── sunfish-target_files-2021.02.06.16.zip -&gt; /nix/store/8ys21rzjqhi2055d7bd4iwa15fv1m446-sunfish-signed_target_files-2021.02.06.16.zip
 </code></pre>
-<p>Of course, this doesn't have to be located at <code>/var/www</code> and it's totally
+<p>Of course, this doesn’t have to be located at <code>/var/www</code> and it’s totally
 possible to integrate updating of the OTA directory into your other robotnix
 build automation.  In this case it is as easy as updating the <code>/var/www/android</code>
 symlink with the new build output.</p>
@@ -443,11 +507,12 @@ serve the OTA from.  If that is not the case you can conveniently copy the
 closure to a remote host using <code>nix copy</code> as in</p>
 <pre><code class="language-console">$ nix copy --to ssh://user@example.com ./ota-dir
 </code></pre>
-<p>Don't forget to add the store path of the <code>ota-dir</code> as a garbage collector root
+<p>Don’t forget to add the store path of the <code>ota-dir</code> as a garbage collector root
 on the remote machine or it might be collected in the next sweep.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="browsers--webview"><a class="header" href="#browsers--webview">Browsers / Webview</a></h1>
-<p>A properly functioning Android system requires the use of a &quot;webview&quot;.
-Chromium-based browsers may also provide this webview </p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="browsers--webview"><a class="header" href="#browsers--webview">Browsers / Webview</a></h1>
+<p>A properly functioning Android system requires the use of a “webview”.
+Chromium-based browsers may also provide this webview</p>
 <p>Robotnix can also build chromium-based browsers from source.
 We currently package Chromium, Bromite, and Vanadium for use with robotnix.</p>
 <blockquote>
@@ -468,7 +533,7 @@ It depends on hardening and compatibility fixes in GrapheneOS rather than reinve
   webview.chromium.isFallback = true; # If true, this provider will be disabled and only used if no others are available. At most one webview can be isFallback.
 }
 </code></pre>
-<p>If multiple webview providers are included in a build, it is possible to select the one used on a running phone under &quot;Settings -&gt; System -&gt; Developer Options -&gt; Webview implementation&quot;.</p>
+<p>If multiple webview providers are included in a build, it is possible to select the one used on a running phone under “Settings -&gt; System -&gt; Developer Options -&gt; Webview implementation”.</p>
 <p>The Vanilla and LineageOS flavors enable the standard Chromium browser and webview by default.
 The GrapheneOS flavor enables Vanadium browser and webview by default.</p>
 <div style="break-before: page; page-break-before: always;"></div><!--
@@ -476,7 +541,7 @@ SPDX-FileCopyrightText: 2020 Daniel Fullmer and robotnix contributors
 SPDX-License-Identifier: MIT
 -->
 <h1 id="set-up-remote-attestation"><a class="header" href="#set-up-remote-attestation">Set up remote attestation</a></h1>
-<p>GrapheneOS has created an Auditor app, as well as a Remote Attestation service, which &quot;use hardware-based security features to validate the identity of a device along with authenticity and integrity of the operating system.
+<p>GrapheneOS has created an Auditor app, as well as a Remote Attestation service, which “use hardware-based security features to validate the identity of a device along with authenticity and integrity of the operating system.
 See the <a href="https://attestation.app/about">About page</a> for additional details.</p>
 <p>Robotnix patches the Auditor app and Remote Attestation service to allow for using the user-created keys.
 This makes the app (and also the Android build itself) depend on information derived from the device signing key(s).
@@ -489,11 +554,11 @@ Future improvements may allow the Auditor app and attestation service to work wi
 <p>You can enable the Auditor app in the configuration:</p>
 <pre><code class="language-nix">{
   signing.enable = true;
-  signing.keyStorePath = &quot;/dev/shm/android-keys&quot;;
+  signing.keyStorePath = "/dev/shm/android-keys";
 
   apps = {
     auditor.enable = true;
-    auditor.domain = &quot;attestation.example.com&quot;;
+    auditor.domain = "attestation.example.com";
   };
 }
 </code></pre>
@@ -501,9 +566,9 @@ Future improvements may allow the Auditor app and attestation service to work wi
 app needs to know its own signing key during build.</p>
 </li>
 <li>
-<p>That's it from the Android side.  Note that the custom Auditor app will be
+<p>That’s it from the Android side.  Note that the custom Auditor app will be
 named “Robotnix Auditor”.  When you build GrapheneOS the normal Auditor app
-will still be there in case you'd like to.</p>
+will still be there in case you’d like to.</p>
 </li>
 </ol>
 <h2 id="server-side"><a class="header" href="#server-side">Server side</a></h2>
@@ -512,7 +577,7 @@ will still be there in case you'd like to.</p>
 <p>Before we begin we have to obtain the fingerprint of the custom Auditor app
 and the AVB fingerprint.  To get the Auditor app fingerprint, we simply use
 OpenSSL to extract the fingerprint of the signing certificate:</p>
-<pre><code class="language-console">$ openssl x509 -noout -fingerprint -sha256 -in keys/auditor.x509.pem | awk -F '=' '{gsub(/:/,&quot;&quot;); print $2}'
+<pre><code class="language-console">$ openssl x509 -noout -fingerprint -sha256 -in keys/auditor.x509.pem | awk -F '=' '{gsub(/:/,""); print $2}'
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </code></pre>
 <p>The AVB fingerprint is a bit more tricky.  I own a Pixel 4a (sunfish) and
@@ -530,20 +595,20 @@ aforementioned fingerprints.</p>
 {
   imports = [
     ((builtins.fetchTarball {
-      name = &quot;robotnix&quot;;
+      name = "robotnix";
       # Replace the git revision and sha256 with ones referring to a recent commit
       url =
-        &quot;https://github.com/danielfullmer/robotnix/archive/61b91d145f0b08cf0d4d73fb1d7ba74b9899b788.zip&quot;;
-      sha256 = &quot;1dihmdw5w891jq2fm7mcx30ydjjd33ggbb60898841x5pzjx6ynv&quot;;
-    }) + &quot;/nixos&quot;)
+        "https://github.com/danielfullmer/robotnix/archive/61b91d145f0b08cf0d4d73fb1d7ba74b9899b788.zip";
+      sha256 = "1dihmdw5w891jq2fm7mcx30ydjjd33ggbb60898841x5pzjx6ynv";
+    }) + "/nixos")
   ];
 
   services.attestation-server = {
     enable = true;
-    domain = &quot;attestation.example.com&quot;;
-    device = &quot;sunfish&quot;;
-    signatureFingerprint = &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;;
-    avbFingerprint = &quot;BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB&quot;;
+    domain = "attestation.example.com";
+    device = "sunfish";
+    signatureFingerprint = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    avbFingerprint = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
     #disableAccountCreation = true; # optionally uncomment after creating your account
     #nginx.enableACME = true; # optionally uncomment if you want to use Let's Encrypt for HTTPS
   };
@@ -560,9 +625,10 @@ remote verification” and scan the QR code on your attestation server.</p>
 <strong>Make periodic backups!</strong></p>
 </li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="prebuilt-apps"><a class="header" href="#prebuilt-apps">Prebuilt Apps</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="prebuilt-apps"><a class="header" href="#prebuilt-apps">Prebuilt Apps</a></h1>
 <p>Robotnix provides convenient configuration options for including additional prebuilt applications in the Android build using <code>apps.prebuilt.*</code> options.
-These apps are &quot;prebuilt&quot; from the perspective of the Android build step, and might even be built from source using Nix in another build step.</p>
+These apps are “prebuilt” from the perspective of the Android build step, and might even be built from source using Nix in another build step.</p>
 <p>Perhaps the main reason to include additional prebuilt applications is to take advantage of privileged permissions only available to system applications.
 Secondarily, other Android applications that are built and customized from source inside Nix might be useful to include as prebuilts to the overall Android build.
 As each change to the robotnix configuration may require a long build process each time, try to avoid the temptation to include all of the applications you typically use in your robotnix configuration.</p>
@@ -571,12 +637,12 @@ As each change to the robotnix configuration may require a long build process ea
 {
   apps.prebuilt.ExampleApp = {
     apk = (pkgs.fetchurl {
-      url = &quot;https://example.com/test.apk&quot;;
-      sha256 = &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;;
+      url = "https://example.com/test.apk";
+      sha256 = "0000000000000000000000000000000000000000000000000000000000000000";
     });
     privileged = true;  # Enable if the application needs access to privileged permissions
-    privappPermissions = [ &quot;INSTALL_PACKAGES &quot;];
-    packageName = &quot;com.example.test&quot;;  # Needs to be set if using privappPermissions
+    privappPermissions = [ "INSTALL_PACKAGES "];
+    packageName = "com.example.test";  # Needs to be set if using privappPermissions
   };
 }
 </code></pre>
@@ -584,15 +650,16 @@ As each change to the robotnix configuration may require a long build process ea
 <code>apps.prebuilt.&lt;name&gt;.apk</code> could also refer to an existing APK file by path, or could refer to some APK file output by another Nix expression.
 In fact, many of the included robotnix modules (such as F-Droid and Chromium) are implemented using the <code>apps.prebuilt</code> module.
 Some of these Nix expressions for these apks are available under <code>apks/</code>.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="source-directories"><a class="header" href="#source-directories">Source Directories</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="source-directories"><a class="header" href="#source-directories">Source Directories</a></h1>
 <p>The AOSP source code is spread across a large number of git repositories.
 The directories included in the robotnix build may be specified using the <code>source.dirs.*</code> options.</p>
 <p>For example, the following configuration will include a new repository checked out under <code>foo/bar</code> by setting the <code>source.dir.&lt;name&gt;.src</code> option.</p>
 <pre><code class="language-nix">{
-  source.dirs.&quot;foo/bar&quot;.src = pkgs.fetchGit {
-    url = &quot;https://example.com/repo/foobar.git&quot;;
-    rev = &quot;f506faf86b8f01f9c09aae877e00ad0a2b4bc511&quot;;
-    sha256 = &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;;
+  source.dirs."foo/bar".src = pkgs.fetchGit {
+    url = "https://example.com/repo/foobar.git";
+    rev = "f506faf86b8f01f9c09aae877e00ad0a2b4bc511";
+    sha256 = "0000000000000000000000000000000000000000000000000000000000000000";
   };
 }
 </code></pre>
@@ -600,10 +667,10 @@ The directories included in the robotnix build may be specified using the <code>
 <p>Additionaly, robotnix provides a convenient mechanism for patching existing source directories:</p>
 <pre><code class="language-nix">{
   # source.dirs.&lt;name&gt;.patches can refer to a list of patches to apply
-  source.dirs.&quot;frameworks/base&quot;.patches = [ ./example.patch ];
+  source.dirs."frameworks/base".patches = [ ./example.patch ];
 
   # source.dirs.&lt;name&gt;.postPatch can refer to a snippet of shell script to modify the source tree
-  source.dirs.&quot;frameworks/base&quot;.postPatch = ''
+  source.dirs."frameworks/base".postPatch = ''
     sed -i 's/hello/there/' example.txt
   '';
 }
@@ -624,13 +691,14 @@ source, and <code>nix-copy-closure</code> of even just the <code>.drv</code> fil
 downloading the source as well. This option is not as well tested as the
 build-time source fetching option.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="other-modules"><a class="header" href="#other-modules">Other Modules</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="other-modules"><a class="header" href="#other-modules">Other Modules</a></h1>
 <h2 id="resources"><a class="header" href="#resources">Resources</a></h2>
 <p>Android applications may have <a href="https://developer.android.com/guide/topics/resources/providing-resources">resources</a> which are additional static content such as bitmaps, user interface strings, configuration values, and others.
 Some simple resources may be set for certain packages using the <code>resources</code> option.</p>
 <p>For example, the settings available <a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/values/config.xml">here</a> may be configured in robotnix by setting (for example):</p>
 <pre><code class="language-nix">{
-  resources.&quot;frameworks/base/core/res&quot;.config_displayWhiteBalanceAvailable = true;
+  resources."frameworks/base/core/res".config_displayWhiteBalanceAvailable = true;
 }
 </code></pre>
 <p>The first key refers toe the relative path for the package resources, and the second key refers to the resource name.
@@ -688,7 +756,7 @@ To use <code>extra-sandbox-paths</code>, the user must be a <code>trusted-user</
 If the Nix sandbox is not enabled, we can instead set <code>signing.buildTimeKeysStorePath</code> in addition to <code>signing.keyStorePath</code> to a string of the absolute path to the generated keys.
 Additionally, the nix builder will also need read access to these keys.
 This can be set using <code>chgrp -R nixbld ./keys</code> and <code>chmod -R g+r ./keys</code>.</p>
-<p>The second option involves building a &quot;release script&quot; with Nix, which depends on and therefore builds the unsigned image inside the Nix build sandbox. The final build steps of signing target files and creating <code>img</code>/<code>ota</code> files are then done outside the sandbox by running the release script:</p>
+<p>The second option involves building a “release script” with Nix, which depends on and therefore builds the unsigned image inside the Nix build sandbox. The final build steps of signing target files and creating <code>img</code>/<code>ota</code> files are then done outside the sandbox by running the release script:</p>
 <pre><code class="language-console">$ nix-build --arg configuration ./crosshatch.nix -A releaseScript -o release
 $ ./release ./keys
 </code></pre>
@@ -708,6 +776,156 @@ To use, install <code>cachix</code>, run <code>cachix use robotnix</code>, and t
 <p>This is assuming the <code>flake.nix</code> is in the current directory, the desired configuration is named <code>dailydriver</code>, and will produce the <code>img</code> output.
 Other robotnix outputs are available using a similar command.</p>
 <div style="break-before: page; page-break-before: always;"></div><!--
+SPDX-FileCopyrightText: 2026 cyclopentane and robotnix contributors
+SPDX-License-Identifier: MIT
+-->
+<h1 id="signing"><a class="header" href="#signing">Signing</a></h1>
+<p>AOSP builds are cryptographically signed to prevent unauthorised tampering with system components. Roughly speaking, there are three ways builds are signed:</p>
+<ul>
+<li>Android Verified Boot (AVB) signatures: The bootloader verifies the integrity of the system partitions via partition hashes and hashtrees before the Linux kernel is booted.</li>
+<li>Individual APK signatures: Every APK is signed with some key, and Android only permits you to update an app with a new APK if the new APK is signed with the same key as the old one.</li>
+<li>OTA signatures: The OTA zips distributed via update servers are signed, and the system updater app and the recovery system check the signatures before allowing you to apply an upgrade.</li>
+</ul>
+<p>In a normal AOSP build process, the components are first signed with so-called “test keys”, which are publicly known and committed to the AOSP source repositories.
+Then, as soon as the target files are built, the developer has the option to re-sign the components with their own “release keys”, which must be kept secret.
+This happens via the <code>sign_target_files_apks</code> tool.</p>
+<h2 id="generating-signing-keys"><a class="header" href="#generating-signing-keys">Generating signing keys</a></h2>
+<p>You can generate your own set of release keys with the <code>generateKeysScript</code> build target:</p>
+<pre><code class="language-shell">$ nix build .#robotnixConfigurations.foo.generateKeysScript --out-link generate-keys-script
+$ ./generate-keys-script my-keys/
+$ tree my-keys/
+my-keys
+└── tegu
+    ├── avb.pem
+    ├── avb_pkmd.bin
+    ├── avb.pub
+    ├── avb.x509.pem
+    ├── bluetooth.pk8
+    ├── bluetooth.x509.pem
+    ├── gmscompat_lib.pk8
+    ├── gmscompat_lib.x509.pem
+    ├── media.pk8
+    ├── media.x509.pem
+    ├── networkstack.pk8
+    ├── networkstack.x509.pem
+    ├── nfc.pk8
+    ├── nfc.x509.pem
+    ├── platform.pk8
+    ├── platform.x509.pem
+    ├── releasekey.pk8
+    ├── releasekey.x509.pem
+    ├── sdk_sandbox.pk8
+    ├── sdk_sandbox.x509.pem
+    ├── shared.pk8
+    └── shared.x509.pem
+</code></pre>
+<h2 id="signing-releases"><a class="header" href="#signing-releases">Signing releases</a></h2>
+<p>In robotnix, however, we can’t simply do so within the main build process, since the release keys are inaccessible within the Nix sandbox, and importing them into the Nix store would make them world-readable.
+Thus, we split the build process into two parts:
+The bulk of the build process that doesn’t involve any secrets is done within the Nix sandbox.
+Then, the very last step of signing the build with your own release keys is done outside of the Nix sandbox:
+Robotnix provides a build target called <code>releaseScript</code>, which is a Bash script that can be pointed at your release keys directory.
+When <code>releaseScript</code> is being run, it uses the unsigned target files that have previously been built in the Nix sandbox and your release keys to generate signed release files:</p>
+<pre><code class="language-console">$ nix build .#robotnixConfigurations.foo.releaseScript --out-link release-script
+$ ./release-script my-keys/
+$ ll tegu-*
+-rw-r--r-- 1 c5h10 users 1741206178 Mar 22 20:02 tegu-factory-2026032000.zip
+-rw-r--r-- 1 c5h10 users 1688149504 Mar 22 20:01 tegu-img-2026032000.zip
+-rw-r--r-- 1 c5h10 users 1310723050 Mar 22 20:01 tegu-ota_update-2026032000.zip
+-rw------- 1 c5h10 users 3369654024 Mar 22 19:58 tegu-signed_target_files-2026032000.zip
+</code></pre>
+<p>You can then either flash them via USB, or upload them to an update server to update your device over-the-air.</p>
+<h2 id="pkcs11-signing"><a class="header" href="#pkcs11-signing">PKCS#11 signing</a></h2>
+<p>Robotnix also allows you to sign your releases with keys residing on a PKCS#11 hardware token, such as an HSM or a YubiKey.
+The token needs to have enough keyslots (~10) to accomodate all of the needed keys.
+It is <strong>not</strong> permissible to reduce the number of keys by mapping multiple key aliases to a single key, since Android uses the certificate of an app to determine its SELinux context.</p>
+<p>In order to set up PKCS#11 signing, the token must contain pairs of keys (<code>CKA_CLASS = CKO_PRIVATE_KEY</code>) and certificates (<code>CKA_CLASS = CKO_CERTIFICATE</code>) with the same ID (<code>CKA_ID</code> attribute), respectively.
+This is due to how the Java Sun PKCS#11 keystore provider maps PKCS#11 keys to Java key aliases <sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>.</p>
+<p>Then, specify the PKCS#11 module, and the key and certificate labels (<code>CKA_LABEL</code> attribute) via the <code>signing.pkcs11</code> module:</p>
+<pre><code class="language-nix">{ pkgs, ... }:
+{
+    signing.pkcs11 = {
+        enable = true;
+        module = "${pkgs.yubico-piv-tool}/bin/libykcs11.so";
+        privateKeyLabels = {
+            "${config.device}/releasekey" = "Private key for Retired Key 1";
+            "${config.device}/media" = "Private key for Retired Key 2";
+            "${config.device}/shared" = "Private key for Retired Key 3";
+            "${config.device}/platform" = "Private key for Retired Key 4";
+            [...]
+        };
+        certificateLabels = {
+            "${config.device}/releasekey" = "X.509 Certificate for Retired Key 1";
+            "${config.device}/media" = "X.509 Certificate for Retired Key 2";
+            "${config.device}/shared" = "X.509 Certificate for Retired Key 3";
+            "${config.device}/platform" = "X.509 Certificate for Retired Key 4";
+            [...]
+        };
+    };
+}
+</code></pre>
+<p>The keys directory must contain all the public keys, certificates and AVB public key metadata blobs it also contains in the non-PKCS#11 case.</p>
+<p>Then, build and run <code>releaseScript</code> with the parameters <code>&lt;keysdir&gt; &lt;prev-buildnumber&gt; &lt;pin-file&gt;</code>, where <code>&lt;pin-file&gt;</code> is a file that contains the PKCS#11 token PIN:</p>
+<pre><code class="language-console">$ nix build .#robotnixConfigurations.foo.releaseScript --out-link release-script
+$ tree my-keys/
+my-keys
+└── tegu
+    ├── avb_pkmd.bin
+    ├── avb.pub
+    ├── avb.x509.pem
+    ├── bluetooth.x509.pem
+    ├── gmscompat_lib.x509.pem
+    ├── media.x509.pem
+    ├── networkstack.x509.pem
+    ├── nfc.x509.pem
+    ├── platform.x509.pem
+    ├── releasekey.x509.pem
+    ├── sdk_sandbox.x509.pem
+    └── shared.x509.pem
+$ PIN_FILE=$(mktemp)
+$ echo -n "123456" &gt; $PIN_FILE
+$ ./release-script my-keys/ "2026021200" "$PIN_FILE"
+</code></pre>
+<p>If you do not want to build an incremental OTA, specify <code>""</code> as the previous build ID.</p>
+<h2 id="yubikey-piv-preset"><a class="header" href="#yubikey-piv-preset">YubiKey PIV preset</a></h2>
+<p>Robotnix provides a PKCS#11 preset for the YubiKey PIV mode:</p>
+<pre><code class="language-nix">{
+    signing.pkcs11 = {
+        enable = true;
+        presets.yubikey-piv.enable = true;
+    };
+}
+</code></pre>
+<p>This will set the required <code>module</code>, <code>certificateLabels</code> and <code>privateKeyLabels</code> options.
+By default, it maps the AOSP signing keys to the “retired”<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup> PIV keyslots.
+You can change the default keyslot mapping via <code>signing.pkcs11.presets.yubikey-piv.slotMap</code>.</p>
+<p>To generate the required signing keys on your yubikey and place the public keys in your keys directory, run the <code>yubikeyGenerateKeysScript</code> target:</p>
+<pre><code class="language-console">$ nix build .#robotnixConfigurations.foo.yubikeyGenerateKeysScript --out-link yubikey-generate-keys-script
+$ ./yubikey-generate-keys-script my-keys/
+</code></pre>
+<p>You can also export the public keys from your YubiKey after they have already been created:</p>
+<pre><code class="language-console">$ nix build .#robotnixConfigurations.foo.yubikeyExportCertificatesScript --out-link yubikey-export-certificates-script
+$ ./yubikey-export-certificates-script my-keys/
+</code></pre>
+<p>Alternatively, you can also import pre-existing keys (the ones generated with <code>generateKeysScript</code>) into your YubiKey.
+This is mainly useful if you want to provision multiple YubiKeys with the same keys as a backup.</p>
+<pre><code class="language-console">$ nix build .#robotnixConfigurations.foo.yubikeyImportKeysScript --out-link yubikey-import-keys-script
+$ ./yubikey-import-keys-script my-keys/
+</code></pre>
+<p>Then, you can run <code>releaseScript</code> as described above.</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>https://docs.oracle.com/javase/8/docs/technotes/guides/security/p11guide.html#KeyStoreRestrictions <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>These key slots are called “retired” for legacy reason - originally, the PIV standard was made for personal identity cards holding four keys, each named after a purpose such as authentication, encryption, or signing.
+The PIV standard also specifies 20 so-called “retired key” slots meant to store old keys from past key rotations.
+However, from a technical point of view, there is nothing “retired” about them - they are fully usable, and they are not going to be removed in the future.
+As the keys we need wouldn’t fit into the four main key slots, we use the retired key slots instead. <a href="#fr-2-1">↩</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><!--
 SPDX-FileCopyrightText: 2021 Daniel Fullmer and robotnix contributors
 SPDX-License-Identifier: MIT
 -->
@@ -726,11 +944,11 @@ signing key.  The instructions in this document were tested on the Google Pixel
 upstream documentation</a>.</p>
 <ol start="0">
 <li>
-<p>Before you can begin you have to boot the stock OS, go to &quot;Settings / About
-phone&quot; and tap the &quot;Build number&quot; field 7 times to enable the &quot;Developer
-options&quot; menu.  Next go to “Settings / System / Advanced / Developer
+<p>Before you can begin you have to boot the stock OS, go to “Settings / About
+phone” and tap the “Build number” field 7 times to enable the “Developer
+options” menu.  Next go to “Settings / System / Advanced / Developer
 options” and enable “OEM unlocking”.  This option is greyed out until you connect your device to Google <a href="https://grapheneos.org/install#enabling-oem-unlocking">at least once</a>.
-This is part of Google's so called Factory Reset Protection (FRP) for anti-theft protection. You do not need to insert a SIM or log into a Google Account to make the “OEM unlocking” option available, but connecting to the internet is required.</p>
+This is part of Google’s so called Factory Reset Protection (FRP) for anti-theft protection. You do not need to insert a SIM or log into a Google Account to make the “OEM unlocking” option available, but connecting to the internet is required.</p>
 </li>
 <li>
 <p>First reboot into the bootloader. You can either do that physically by
@@ -761,7 +979,7 @@ $ fastboot reboot bootloader
 </code></pre>
 </li>
 <li>
-<p>Unzip the factory image built by robotnix. Double check that you're
+<p>Unzip the factory image built by robotnix. Double check that you’re
 flashing to the correct device. To flash the image run</p>
 <pre><code class="language-console">$ ./flash-all.sh
 </code></pre>
@@ -811,7 +1029,7 @@ you might not even be able to recover your device by flashing a stock image, eff
 <p>If you are unable to enroll a custom AVB key on your device, you could theoretically skip steps 4, 6 and 8. This is highly discouraged as it leaves your device in the <a href="https://source.android.com/security/verifiedboot/boot-flow#communicating-verified-boot-state-to-users">vulnerable UNLOCKED state instead of being LOCKED with a custom root of trust.</a>.</p>
 </blockquote>
 <h2 id="updating-by-sideloading-ota-files"><a class="header" href="#updating-by-sideloading-ota-files">Updating by sideloading OTA files</a></h2>
-<p>Preferably, you can update your Vanilla/GrapheneOS flavor device using true &quot;over-the-air&quot; mechanism provided by the <code>apps.updater</code> module with a server hosting the OTA files, as shown <a href="modules/ota.html">here</a>.
+<p>Preferably, you can update your Vanilla/GrapheneOS flavor device using true “over-the-air” mechanism provided by the <code>apps.updater</code> module with a server hosting the OTA files, as shown <a href="#over-the-air-ota-updater">here</a>.
 If this is not available, it is still possible to update by sideloading the OTA file.</p>
 <blockquote>
 <p>It is recommended to update using the OTA file instead of using <code>fastboot update</code> with a new <code>img</code>.
@@ -857,7 +1075,7 @@ Success”.  This is not an error even though it is not obvious, see also
 <a href="https://np.reddit.com/r/LineageOS/comments/dt2et4/adb_failed_to_read_command_success/f6u352m">here</a>.</p>
 </li>
 <li>
-<p>Once finished and the device doesn't automatically reboot just select
+<p>Once finished and the device doesn’t automatically reboot just select
 reboot from the menu and confirm.</p>
 </li>
 </ol>
@@ -883,18 +1101,18 @@ Each mapping is of the format <code>&lt;remote_url&gt;=&lt;local_url&gt;</code>.
 For example:</p>
 <pre><code>ROBOTNIX_GIT_MIRRORS=https://android.googlesource.com=/mnt/cache/mirror|https://github.com/LineageOS=/mnt/cache/lineageos/LineageOS
 </code></pre>
-<p>Both the robotnix update scripts as well as robotnix's overridden <code>fetchgit</code> derivation use <code>ROBOTNIX_GIT_MIRRORS</code>.
+<p>Both the robotnix update scripts as well as robotnix’s overridden <code>fetchgit</code> derivation use <code>ROBOTNIX_GIT_MIRRORS</code>.
 This environment variable is passed to <code>fetchgit</code> via <code>impureEnvVars</code> (search for <code>impureEnvVars</code> in the <a href="https://nixos.org/manual/nix/stable/">Nix manual</a>).
-If the Nix daemon is being used, it needs to have this <code>ROBOTNIX_GIT_MIRRORS</code> in its environment, not just in the user's environment when running <code>nix-build</code> or <code>nix build</code>.
+If the Nix daemon is being used, it needs to have this <code>ROBOTNIX_GIT_MIRRORS</code> in its environment, not just in the user’s environment when running <code>nix-build</code> or <code>nix build</code>.
 The following NixOS configuration can be used to easily set this environment variable for the Nix daemon:</p>
 <pre><code class="language-nix">let
   mirrors = {
-    &quot;https://android.googlesource.com&quot; = &quot;/mnt/cache/mirror&quot;;
-    &quot;https://github.com/LineageOS&quot; = &quot;/mnt/cache/lineageos/LineageOS&quot;;
+    "https://android.googlesource.com" = "/mnt/cache/mirror";
+    "https://github.com/LineageOS" = "/mnt/cache/lineageos/LineageOS";
   };
 in
 {
-  nix.envVars.ROBOTNIX_GIT_MIRRORS = lib.concatStringsSep &quot;|&quot; (lib.mapAttrsToList (local: remote: &quot;${local}=${remote}&quot;) mirrors);
+  nix.envVars.ROBOTNIX_GIT_MIRRORS = lib.concatStringsSep "|" (lib.mapAttrsToList (local: remote: "${local}=${remote}") mirrors);
 
   # Also add local mirrors to nix sandbox exceptions
   nix.sandboxPaths = lib.attrValues mirrors;
@@ -921,8 +1139,8 @@ This can be done in a similar way as is done with NixOS modules.
 For instance, if the module is provided by <code>default.nix</code> in the <code>owner/repo</code> repository on GitHub:</p>
 <pre><code class="language-nix">{
     imports = [ (builtins.fetchTarball {
-        url = &quot;https://github.com/owner/repo/archive/9b034054166e1f01b3bdb6a1948daa3bdafe039a.tar.gz&quot;;
-        sha256 = &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;;
+        url = "https://github.com/owner/repo/archive/9b034054166e1f01b3bdb6a1948daa3bdafe039a.tar.gz";
+        sha256 = "0000000000000000000000000000000000000000000000000000000000000000";
     }) ];
 }
 </code></pre>
@@ -930,7 +1148,7 @@ For instance, if the module is provided by <code>default.nix</code> in the <code
 Any options or configuration set by the specified module will be included in the build.</p>
 <h2 id="developing-a-new-flavor"><a class="header" href="#developing-a-new-flavor">Developing a new flavor</a></h2>
 <p>To create a new flavor, the developer should create a robotnix module that conditions on <code>config.flavor</code>.
-The flavor configuration defaults should be set conditionally using (for example) <code>mkIf (config.flavor = &quot;...&quot;) { ... }</code>.
+The flavor configuration defaults should be set conditionally using (for example) <code>mkIf (config.flavor = "...") { ... }</code>.
 Those configuration defaults should include:</p>
 <ul>
 <li>Setting <code>source.dirs</code> using a repo JSON file produced by <code>mk_repo_file.py</code>.</li>
@@ -944,7 +1162,7 @@ It is recommended to take a look at the Nix expressions implementing the current
 <p>Robotnix can also build a script which will start the Android emulator using an attached robotnix-built system image.
 This can be accomplished with the <code>emulator</code> Nix output.
 To build and run an emulator with an attached vanilla system image, use (for example):</p>
-<pre><code class="language-console">$ nix-build ./default.nix --arg configuration '{device=&quot;x86_64&quot;; flavor=&quot;vanilla&quot;;}' -A emulator
+<pre><code class="language-console">$ nix-build ./default.nix --arg configuration '{device="x86_64"; flavor="vanilla";}' -A emulator
 $ ./result
 </code></pre>
 <p>This currently only works well when using the generic <code>x86_64</code> device.</p>
@@ -952,7 +1170,7 @@ $ ./result
 <p>All devices (Pixel 3-5(a) (XL)) have very basic checks to ensure that the android build process will at least start properly.
 See <code>release.nix</code> for the set of configurations with this minimal build testing.
 This check is run using <code>nix-build ./release.nix -A check</code>.
-As each build takes approximately 4 hours--I only build marlin and crosshatch builds for myself.
+As each build takes approximately 4 hours–I only build marlin and crosshatch builds for myself.
 At some point, I would love to set up a build farm and publish build products on s3 or <a href="https://cachix.org">cachix</a>.
 This would allow an end-user to simply sign releases using their own keys without building the entire AOSP themselves.</p>
 <p>As of 2020-05-17, <code>target_files</code>, <code>signed_target_files</code>, <code>img</code>, and <code>ota</code> files have all been verified to be bit-for-bit reproducible for <code>crosshatch</code> and <code>marlin</code> using the <code>vanilla</code> flavor.
@@ -970,73 +1188,175 @@ For example, to build <code>adb</code>, run</p>
 <pre><code class="language-console">$ nix-build ./components.nix -A adb
 </code></pre>
 <p>The set of components available may be found in <code>components.json</code>.</p>
-<p>Only what Android considers the &quot;installed output&quot; of the components is copied into the resuting derivation, and not &quot;intermediate&quot; results.
+<p>Only what Android considers the “installed output” of the components is copied into the resuting derivation, and not “intermediate” results.
 Sometimes these intermediate results are what is desired, in which case the user should manually set the <code>installPhase</code> for a <code>mkAndroid</code> invokation.
-For more detailed information about what exactly these components produce as &quot;installed output&quot;, see the <code>config.build.moduleInfo</code> output for a build.</p>
+For more detailed information about what exactly these components produce as “installed output”, see the <code>config.build.moduleInfo</code> output for a build.</p>
 <h2 id="additional-notes"><a class="header" href="#additional-notes">Additional Notes</a></h2>
 <p>Robotnix bind mounts the source directories from <code>/nix/store</code>.
-These files/directories have their &quot;user write&quot; (<code>u-w</code>) permission removed.
+These files/directories have their “user write” (<code>u-w</code>) permission removed.
 Sometimes, Android Makefiles which copy files from the source directories may assume the files have the write permission enabled, which can then break later steps.
 To work around these issues, it is usually sufficient to add a <code>chmod</code> command or add <code>--no-preserve=owner,mode</code> to the <code>cp</code> command in the Makefile.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="robotnix-configuration-options"><a class="header" href="#robotnix-configuration-options">Robotnix Configuration Options</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="robotnix-configuration-options"><a class="header" href="#robotnix-configuration-options">Robotnix Configuration Options</a></h1>
 <p><em>Some robotnix flavors or modules may change the option defaults shown below.</em>
 <em>Refer to the flavor or module source for details</em></p>
+<h3 id="_moduleargs"><a class="header" href="#_moduleargs"><code>_module.args</code></a></h3>
+<p>Additional arguments passed to each module in addition to ones
+like <code>lib</code>, <code>config</code>,
+and <code>pkgs</code>, <code>modulesPath</code>.</p>
+<p>This option is also available to all submodules. Submodules do not
+inherit args from their parent module, nor do they provide args to
+their parent module or sibling submodules. The sole exception to
+this is the argument <code>name</code> which is provided by
+parent modules to a submodule and contains the attribute name
+the submodule is bound to, or a unique generated name if it is
+not bound to an attribute.</p>
+<p>Some arguments are already passed by default, of which the
+following <em>cannot</em> be changed with this option:</p>
+<ul>
+<li>
+<p>{var}<code>lib</code>: The nixpkgs library.</p>
+</li>
+<li>
+<p>{var}<code>config</code>: The results of all options after merging the values from all modules together.</p>
+</li>
+<li>
+<p>{var}<code>options</code>: The options declared in all modules.</p>
+</li>
+<li>
+<p>{var}<code>specialArgs</code>: The <code>specialArgs</code> argument passed to <code>evalModules</code>.</p>
+</li>
+<li>
+<p>All attributes of {var}<code>specialArgs</code></p>
+<p>Whereas option values can generally depend on other option values
+thanks to laziness, this does not apply to <code>imports</code>, which
+must be computed statically before anything else.</p>
+<p>For this reason, callers of the module system can provide <code>specialArgs</code>
+which are available during import resolution.</p>
+<p>For NixOS, <code>specialArgs</code> includes
+{var}<code>modulesPath</code>, which allows you to import
+extra modules from the nixpkgs package tree without having to
+somehow make the module aware of the location of the
+<code>nixpkgs</code> or NixOS directories.</p>
+<pre><code>{ modulesPath, ... }: {
+  imports = [
+    (modulesPath + "/profiles/minimal.nix")
+  ];
+}
+</code></pre>
+</li>
+</ul>
+<p>For NixOS, the default value for this option includes at least this argument:</p>
+<ul>
+<li>{var}<code>pkgs</code>: The nixpkgs package set according to
+the {option}<code>nixpkgs.pkgs</code> option.</li>
+</ul>
+<p><em>Type</em>: lazy attribute set of raw value</p>
+<p><em>Declared by</em>:
+lib/modules.nix</p>
+<h3 id="adevtooldevices"><a class="header" href="#adevtooldevices"><code>adevtool.devices</code></a></h3>
+<p>The device codenames to extract the vendor blobs for.</p>
+<p><em>Type</em>: list of string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
+<h3 id="adevtoolenable"><a class="header" href="#adevtoolenable"><code>adevtool.enable</code></a></h3>
+<p>Whether to enable the adevtool module.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
+<p><em>Type</em>: boolean</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
+<h3 id="adevtoolvendorimgmetadata"><a class="header" href="#adevtoolvendorimgmetadata"><code>adevtool.vendorImgMetadata</code></a></h3>
+<p>The metadata of the vendor images to be prefetched and made available
+to adevtool during the build. The adevtool module will add the
+corresponding instances of <code>pkgs.fetchurl</code> to <code>adevtool.vendorImgs</code>.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of (submodule)</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
+<h3 id="adevtoolvendorimgmetadatafilename"><a class="header" href="#adevtoolvendorimgmetadatafilename"><code>adevtool.vendorImgMetadata.*.fileName</code></a></h3>
+<p>The file name of the image.</p>
+<p><em>Type</em>: string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
+<h3 id="adevtoolvendorimgmetadatasha256"><a class="header" href="#adevtoolvendorimgmetadatasha256"><code>adevtool.vendorImgMetadata.*.sha256</code></a></h3>
+<p>The SHA256 sum of the image.</p>
+<p><em>Type</em>: string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
+<h3 id="adevtoolvendorimgmetadataurl"><a class="header" href="#adevtoolvendorimgmetadataurl"><code>adevtool.vendorImgMetadata.*.url</code></a></h3>
+<p>The download URL of the image.</p>
+<p><em>Type</em>: string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
+<h3 id="adevtoolvendorimgs"><a class="header" href="#adevtoolvendorimgs"><code>adevtool.vendorImgs</code></a></h3>
+<p>The vendor images to be prefetched and made available to adevtool
+during the build.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "{ }"; }</code></p>
+<p><em>Type</em>: attribute set of absolute path</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
+<h3 id="adevtoolyarnhash"><a class="header" href="#adevtoolyarnhash"><code>adevtool.yarnHash</code></a></h3>
+<p>The yarn hash of the <code>yarn.lock</code> file inside the <code>vendor/adevtool</code> repo
+in the source tree, as required by <code>fetchYarnDeps</code>.</p>
+<p><em>Type</em>: string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/adevtool">modules/adevtool</a></p>
 <h3 id="androidversion"><a class="header" href="#androidversion"><code>androidVersion</code></a></h3>
 <p>Used to select which Android version to use</p>
-<p><em>Default</em>: <code>12</code></p>
 <p><em>Type</em>: signed integer</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="appsauditordomain"><a class="header" href="#appsauditordomain"><code>apps.auditor.domain</code></a></h3>
 <p>Domain running the AttestationServer (over HTTPS) for remote verification</p>
-<p><em>Example</em>: <code>&quot;attestation.example.com&quot;</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"attestation.example.com\""}</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/auditor.nix">modules/apps/auditor.nix</a></p>
 <h3 id="appsauditorenable"><a class="header" href="#appsauditorenable"><code>apps.auditor.enable</code></a></h3>
 <p>Whether to enable Auditor.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/auditor.nix">modules/apps/auditor.nix</a></p>
 <h3 id="appsbromiteenable"><a class="header" href="#appsbromiteenable"><code>apps.bromite.enable</code></a></h3>
 <p>Whether to enable bromite browser.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/chromium.nix">modules/apps/chromium.nix</a></p>
 <h3 id="appschromiumenable"><a class="header" href="#appschromiumenable"><code>apps.chromium.enable</code></a></h3>
 <p>Whether to enable chromium browser.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/chromium.nix">modules/apps/chromium.nix</a></p>
 <h3 id="appsfdroidadditionalrepos"><a class="header" href="#appsfdroidadditionalrepos"><code>apps.fdroid.additionalRepos</code></a></h3>
 <p>Additional F-Droid repositories to include in the default build.
 Note that changes to this setting will only take effect on a freshly
-installed device--or if the F-Droid storage is cleared.</p>
-<p><em>Default</em>: <code>{ }</code></p>
-<p><em>Type</em>: attribute set of submodules</p>
+installed device–or if the F-Droid storage is cleared.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "{ }"; }</code></p>
+<p><em>Type</em>: attribute set of (submodule)</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
 <h3 id="appsfdroidadditionalreposnamedescription"><a class="header" href="#appsfdroidadditionalreposnamedescription"><code>apps.fdroid.additionalRepos.&lt;name&gt;.description</code></a></h3>
 <p>Longer textual description of this repository</p>
-<p><em>Default</em>: <code>&quot;Empty description&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"Empty description\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
 <h3 id="appsfdroidadditionalreposnameenable"><a class="header" href="#appsfdroidadditionalreposnameenable"><code>apps.fdroid.additionalRepos.&lt;name&gt;.enable</code></a></h3>
 <p>Whether to enable this repository by default in F-Droid.</p>
-<p><em>Default</em>: <code>false</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
 <h3 id="appsfdroidadditionalreposnamename"><a class="header" href="#appsfdroidadditionalreposnamename"><code>apps.fdroid.additionalRepos.&lt;name&gt;.name</code></a></h3>
 <p>Display name to use for this repository</p>
-<p><em>Default</em>: <code>&quot;‹name›&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"‹name›\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
@@ -1047,8 +1367,8 @@ installed device--or if the F-Droid storage is cleared.</p>
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
 <h3 id="appsfdroidadditionalreposnamepushrequests"><a class="header" href="#appsfdroidadditionalreposnamepushrequests"><code>apps.fdroid.additionalRepos.&lt;name&gt;.pushRequests</code></a></h3>
 <p>Allow this repository to specify apps which should be automatically installed/uninstalled</p>
-<p><em>Default</em>: <code>&quot;ignore&quot;</code></p>
-<p><em>Type</em>: one of &quot;ignore&quot;, &quot;prompt&quot;, &quot;always&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"ignore\""; }</code></p>
+<p><em>Type</em>: one of “ignore”, “prompt”, “always”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
 <h3 id="appsfdroidadditionalreposnameurl"><a class="header" href="#appsfdroidadditionalreposnameurl"><code>apps.fdroid.additionalRepos.&lt;name&gt;.url</code></a></h3>
@@ -1058,122 +1378,128 @@ installed device--or if the F-Droid storage is cleared.</p>
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
 <h3 id="appsfdroidenable"><a class="header" href="#appsfdroidenable"><code>apps.fdroid.enable</code></a></h3>
 <p>Whether to enable F-Droid.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
+<h3 id="appsfdroidfingerprint"><a class="header" href="#appsfdroidfingerprint"><code>apps.fdroid.fingerprint</code></a></h3>
+<p>The certificate fingerprint of the F-Droid APK. This is required
+because the F-Droid privileged extension checks the signature of the
+F-Droid APK to prevent unauthorized access.</p>
+<p><em>Type</em>: string matching the pattern [0-9A-F]{64}</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/fdroid.nix">modules/apps/fdroid.nix</a></p>
 <h3 id="appsprebuilt"><a class="header" href="#appsprebuilt"><code>apps.prebuilt</code></a></h3>
 <p>Prebuilt APKs to include in the robotnix build</p>
-<p><em>Default</em>: <code>{ }</code></p>
-<p><em>Type</em>: attribute set of submodules</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "{ }"; }</code></p>
+<p><em>Type</em>: attribute set of (submodule)</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnameallowinpowersave"><a class="header" href="#appsprebuiltnameallowinpowersave"><code>apps.prebuilt.&lt;name&gt;.allowInPowerSave</code></a></h3>
-<p>Whether to allow this application to operate in &quot;power save&quot; mode.
+<p>Whether to allow this application to operate in "power save" mode.
 Disables battery optimization for this app.</p>
-<p><em>Default</em>: <code>false</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnameapk"><a class="header" href="#appsprebuiltnameapk"><code>apps.prebuilt.&lt;name&gt;.apk</code></a></h3>
 <p>APK file to include in build</p>
-<p><em>Default</em>: <code>null</code></p>
-<p><em>Type</em>: null or path</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Type</em>: null or absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnamecertificate"><a class="header" href="#appsprebuiltnamecertificate"><code>apps.prebuilt.&lt;name&gt;.certificate</code></a></h3>
 <p>Name of certificate to sign APK with.  Defaults to the name of the prebuilt app.
-If it is a device-specific certificate, the cert/key should be under <code>${keyStorePath}/${device}/${certificate}.{x509.pem,pk8}</code>.
-Otherwise, it should be <code>${keyStorePath}/${certificate}.{x509.pem,pk8}</code>.
-Finally, the special string &quot;PRESIGNED&quot; will just use the APK as-is.</p>
-<p><em>Default</em>: <code>&quot;‹name›&quot;</code></p>
+If it is a device-specific certificate, the cert/key should be in your keys dir under <code>${device}/${certificate}.{x509.pem,pk8}</code>.
+The special string “PRESIGNED” will just use the APK as-is and not replace the signature.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"‹name›\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnamedefaultpermissions"><a class="header" href="#appsprebuiltnamedefaultpermissions"><code>apps.prebuilt.&lt;name&gt;.defaultPermissions</code></a></h3>
 <p>Permissions to be enabled by default without user prompting.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Example</em>: <code>[&quot;INSTALL_PACKAGES&quot;]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"[\n  \"INSTALL_PACKAGES\"\n]"}</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnameenable"><a class="header" href="#appsprebuiltnameenable"><code>apps.prebuilt.&lt;name&gt;.enable</code></a></h3>
 <p>Include ‹name› APK in Android build</p>
-<p><em>Default</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "true"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnamemoduleprefix"><a class="header" href="#appsprebuiltnamemoduleprefix"><code>apps.prebuilt.&lt;name&gt;.modulePrefix</code></a></h3>
 <p>Prefix to prepend to the module name to avoid conflicts. (No spaces)</p>
-<p><em>Default</em>: <code>&quot;Robotnix&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"Robotnix\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnamename"><a class="header" href="#appsprebuiltnamename"><code>apps.prebuilt.&lt;name&gt;.name</code></a></h3>
 <p>Name of application. (No spaces)</p>
-<p><em>Default</em>: <code>&quot;‹name›&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"‹name›\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnamepackagename"><a class="header" href="#appsprebuiltnamepackagename"><code>apps.prebuilt.&lt;name&gt;.packageName</code></a></h3>
-<p>APK's Java-style package name (applicationId). This setting only necessary to be set if also using <code>privappPermissions</code>.</p>
-<p><em>Example</em>: <code>&quot;com.android.test&quot;</code></p>
+<p>APK’s Java-style package name (applicationId). This setting only necessary to be set if also using <code>privappPermissions</code>.</p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"com.android.test\""}</code></p>
 <p><em>Type</em>: string matching the pattern [a-zA-Z0-9_.]*</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnamepartition"><a class="header" href="#appsprebuiltnamepartition"><code>apps.prebuilt.&lt;name&gt;.partition</code></a></h3>
 <p>Partition on which to place this app</p>
-<p><em>Type</em>: one of &quot;vendor&quot;, &quot;system&quot;, &quot;product&quot;</p>
+<p><em>Type</em>: one of “vendor”, “system”, “product”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnameprivapppermissions"><a class="header" href="#appsprebuiltnameprivapppermissions"><code>apps.prebuilt.&lt;name&gt;.privappPermissions</code></a></h3>
 <p>Privileged permissions to apply to this application.
 Refer to this <a href="https://developer.android.com/reference/android/Manifest.permission">link</a> and note permissions which say
-&quot;not for use by third-party applications&quot;.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Example</em>: <code>[&quot;INSTALL_PACKAGES&quot;]</code></p>
-<p><em>Type</em>: list of strings</p>
+“not for use by third-party applications”.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"[\n  \"INSTALL_PACKAGES\"\n]"}</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnameprivileged"><a class="header" href="#appsprebuiltnameprivileged"><code>apps.prebuilt.&lt;name&gt;.privileged</code></a></h3>
 <p>Whether this APK should be included as a privileged application.</p>
-<p><em>Default</em>: <code>false</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnameuseslibraries"><a class="header" href="#appsprebuiltnameuseslibraries"><code>apps.prebuilt.&lt;name&gt;.usesLibraries</code></a></h3>
 <p>Shared library dependencies of this app.</p>
 <p>For more information, see <a href="https://android.googlesource.com/platform/build/+/75342c19323fea64dbc93fdc5a7def3f81113c83/Changes.md">https://android.googlesource.com/platform/build/+/75342c19323fea64dbc93fdc5a7def3f81113c83/Changes.md</a>.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsprebuiltnameusesoptionallibraries"><a class="header" href="#appsprebuiltnameusesoptionallibraries"><code>apps.prebuilt.&lt;name&gt;.usesOptionalLibraries</code></a></h3>
 <p>Optional shared library dependencies of this app.</p>
 <p>For more information, see <a href="https://android.googlesource.com/platform/build/+/75342c19323fea64dbc93fdc5a7def3f81113c83/Changes.md">https://android.googlesource.com/platform/build/+/75342c19323fea64dbc93fdc5a7def3f81113c83/Changes.md</a>.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/prebuilt.nix">modules/apps/prebuilt.nix</a></p>
 <h3 id="appsseedvaultenable"><a class="header" href="#appsseedvaultenable"><code>apps.seedvault.enable</code></a></h3>
 <p>Whether to enable Seedvault (backup).</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/seedvault.nix">modules/apps/seedvault.nix</a></p>
 <h3 id="appsupdaterenable"><a class="header" href="#appsupdaterenable"><code>apps.updater.enable</code></a></h3>
 <p>Whether to enable OTA Updater.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/updater.nix">modules/apps/updater.nix</a></p>
 <h3 id="appsupdaterflavor"><a class="header" href="#appsupdaterflavor"><code>apps.updater.flavor</code></a></h3>
 <p>Which updater package to use, and which kind of metadata to generate for it.</p>
-<p><em>Default</em>: <code>&quot;grapheneos&quot;</code></p>
-<p><em>Type</em>: one of &quot;grapheneos&quot;, &quot;lineageos&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"grapheneos\""; }</code></p>
+<p><em>Type</em>: one of “grapheneos”, “lineageos”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/updater.nix">modules/apps/updater.nix</a></p>
 <h3 id="appsupdaterurl"><a class="header" href="#appsupdaterurl"><code>apps.updater.url</code></a></h3>
@@ -1183,47 +1509,42 @@ Refer to this <a href="https://developer.android.com/reference/android/Manifest.
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/updater.nix">modules/apps/updater.nix</a></p>
 <h3 id="appsvanadiumenable"><a class="header" href="#appsvanadiumenable"><code>apps.vanadium.enable</code></a></h3>
 <p>Whether to enable vanadium browser.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apps/chromium.nix">modules/apps/chromium.nix</a></p>
-<h3 id="apvbuildid"><a class="header" href="#apvbuildid"><code>apv.buildID</code></a></h3>
-<p>Build ID associated with the upstream img/ota (used to select images)</p>
-<p><em>Type</em>: string</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apv">modules/apv</a></p>
-<h3 id="apvenable"><a class="header" href="#apvenable"><code>apv.enable</code></a></h3>
-<p>Whether to enable android-prepare-vendor.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
-<p><em>Type</em>: boolean</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apv">modules/apv</a></p>
-<h3 id="apvimg"><a class="header" href="#apvimg"><code>apv.img</code></a></h3>
-<p>A factory image <code>.zip</code> from upstream whose vendor contents should be extracted and included in the build</p>
-<p><em>Default</em>: <code>null</code></p>
-<p><em>Type</em>: path</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apv">modules/apv</a></p>
-<h3 id="apvota"><a class="header" href="#apvota"><code>apv.ota</code></a></h3>
-<p>An <code>OTA</code> from upstream whose vendor contents should be extracted and included in the build. (Android &gt;=10 builds require this in addition to <code>apv.img</code>)</p>
-<p><em>Default</em>: <code>null</code></p>
-<p><em>Type</em>: path</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/apv">modules/apv</a></p>
 <h3 id="arch"><a class="header" href="#arch"><code>arch</code></a></h3>
 <p>Architecture of phone, usually set automatically by device</p>
-<p><em>Default</em>: <code>&quot;arm64&quot;</code></p>
-<p><em>Type</em>: one of &quot;arm64&quot;, &quot;arm&quot;, &quot;x86_64&quot;, &quot;x86&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"arm64\""; }</code></p>
+<p><em>Type</em>: one of “arm64”, “arm”, “x86_64”, “x86”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
+<h3 id="bootanimationenable"><a class="header" href="#bootanimationenable"><code>bootanimation.enable</code></a></h3>
+<p>Whether to enable the custom bootanimation module.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
+<p><em>Type</em>: boolean</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/bootanimation.nix">modules/bootanimation.nix</a></p>
+<h3 id="bootanimationlogomask"><a class="header" href="#bootanimationlogomask"><code>bootanimation.logoMask</code></a></h3>
+<p>The file to put at <code>frameworks/base/core/res/assets/images/android-logo-mask.png</code>.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Type</em>: null or absolute path</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/bootanimation.nix">modules/bootanimation.nix</a></p>
+<h3 id="bootanimationlogoshine"><a class="header" href="#bootanimationlogoshine"><code>bootanimation.logoShine</code></a></h3>
+<p>The file to put at <code>frameworks/base/core/res/assets/images/android-logo-shine.png</code>.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Type</em>: null or absolute path</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/bootanimation.nix">modules/bootanimation.nix</a></p>
 <h3 id="builddatetime"><a class="header" href="#builddatetime"><code>buildDateTime</code></a></h3>
 <p>Unix time (seconds since the epoch) that this build is taking place.
 Needs to be monotonically increasing for each build if you use the over-the-air (OTA) update mechanism.
 e.g. output of <code>date +%s</code></p>
-<p><em>Default</em>: <code>&quot;*maximum of source.dirs.&lt;name&gt;.dateTime*&quot;</code></p>
-<p><em>Example</em>: <code>1565645583</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"*maximum of source.dirs.&lt;name&gt;.dateTime*\""; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"1565645583"}</code></p>
 <p><em>Type</em>: signed integer</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
@@ -1231,57 +1552,51 @@ e.g. output of <code>date +%s</code></p>
 <p>Set this to something meaningful to identify the build.
 Defaults to <code>YYYYMMDDHH</code> based on <code>buildDateTime</code>.
 Should be unique for each build for disambiguation.</p>
-<p><em>Example</em>: <code>&quot;201908121&quot;</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"201908121\""}</code></p>
 <p><em>Type</em>: string</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
-<h3 id="buildtype"><a class="header" href="#buildtype"><code>buildType</code></a></h3>
-<p>one of &quot;release&quot;, &quot;debug&quot;</p>
-<p><em>Default</em>: <code>&quot;release&quot;</code></p>
-<p><em>Type</em>: one of &quot;release&quot;, &quot;debug&quot;</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="ccacheenable"><a class="header" href="#ccacheenable"><code>ccache.enable</code></a></h3>
 <p>Whether to enable ccache.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="channel"><a class="header" href="#channel"><code>channel</code></a></h3>
 <p>Default channel to use for updates (can be modified in app)</p>
-<p><em>Default</em>: <code>&quot;stable&quot;</code></p>
-<p><em>Type</em>: one of &quot;stable&quot;, &quot;beta&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"stable\""; }</code></p>
+<p><em>Type</em>: one of “stable”, “beta”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/release.nix">modules/release.nix</a></p>
 <h3 id="device"><a class="header" href="#device"><code>device</code></a></h3>
 <p>Code name of device build target</p>
-<p><em>Default</em>: <code>null</code></p>
-<p><em>Example</em>: <code>&quot;marlin&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"marlin\""}</code></p>
 <p><em>Type</em>: null or string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="devicedisplayname"><a class="header" href="#devicedisplayname"><code>deviceDisplayName</code></a></h3>
 <p>Display name of device build target</p>
-<p><em>Default</em>: <code>null</code></p>
-<p><em>Example</em>: <code>&quot;Pixel XL&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"Pixel XL\""}</code></p>
 <p><em>Type</em>: null or string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="etc"><a class="header" href="#etc"><code>etc</code></a></h3>
 <p>Set of files to be included under <code>/etc</code></p>
-<p><em>Default</em>: <code>{ }</code></p>
-<p><em>Type</em>: attribute set of submodules</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "{ }"; }</code></p>
+<p><em>Type</em>: attribute set of (submodule)</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/etc.nix">modules/etc.nix</a></p>
 <h3 id="etcnamepartition"><a class="header" href="#etcnamepartition"><code>etc.&lt;name&gt;.partition</code></a></h3>
 <p>Partition on which to place this etc file</p>
-<p><em>Type</em>: one of &quot;vendor&quot;, &quot;system&quot;, &quot;product&quot;</p>
+<p><em>Type</em>: one of “vendor”, “system”, “product”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/etc.nix">modules/etc.nix</a></p>
 <h3 id="etcnamesource"><a class="header" href="#etcnamesource"><code>etc.&lt;name&gt;.source</code></a></h3>
 <p>Path of the source file</p>
-<p><em>Type</em>: path</p>
+<p><em>Type</em>: absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/etc.nix">modules/etc.nix</a></p>
 <h3 id="etcnametarget"><a class="header" href="#etcnametarget"><code>etc.&lt;name&gt;.target</code></a></h3>
@@ -1291,59 +1606,77 @@ Should be unique for each build for disambiguation.</p>
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/etc.nix">modules/etc.nix</a></p>
 <h3 id="etcnametext"><a class="header" href="#etcnametext"><code>etc.&lt;name&gt;.text</code></a></h3>
 <p>Text of the file</p>
-<p><em>Default</em>: <code>null</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
 <p><em>Type</em>: null or string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/etc.nix">modules/etc.nix</a></p>
 <h3 id="flavor"><a class="header" href="#flavor"><code>flavor</code></a></h3>
-<p>Set to one of robotnix's supported flavors.
-Current options are <code>vanilla</code>, <code>grapheneos</code>, and <code>lineageos</code>.</p>
-<p><em>Default</em>: <code>null</code></p>
-<p><em>Example</em>: <code>&quot;vanilla&quot;</code></p>
-<p><em>Type</em>: null or string</p>
+<p>Set to one of robotnix’s supported flavors.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"vanilla\""}</code></p>
+<p><em>Type</em>: null or one of “lineageos”, “grapheneos”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
+<h3 id="grapheneoschannel"><a class="header" href="#grapheneoschannel"><code>grapheneos.channel</code></a></h3>
+<p>The GrapheneOS channel to use.</p>
+<p><em>Type</em>: null or one of “alpha”, “beta”, “stable”</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/flavors/grapheneos">flavors/grapheneos</a></p>
+<h3 id="grapheneosofficialbuild"><a class="header" href="#grapheneosofficialbuild"><code>grapheneos.officialBuild</code></a></h3>
+<p>Whether to enable the OFFICIAL_BUILD=true env var (to include the updater).</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
+<p><em>Type</em>: boolean</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/flavors/grapheneos">flavors/grapheneos</a></p>
+<h3 id="grapheneosrelease"><a class="header" href="#grapheneosrelease"><code>grapheneos.release</code></a></h3>
+<p>The GrapheneOS release tag to build. Set this if you’re building a for
+a non-phone target, or if you didn’t select a channel.</p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"2025073000\""}</code></p>
+<p><em>Type</em>: null or string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/flavors/grapheneos">flavors/grapheneos</a></p>
 <h3 id="hosts"><a class="header" href="#hosts"><code>hosts</code></a></h3>
 <p>Custom hosts file</p>
-<p><em>Default</em>: <code>null</code></p>
-<p><em>Type</em>: null or path</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Type</em>: null or absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/hosts.nix">modules/hosts.nix</a></p>
 <h3 id="incremental"><a class="header" href="#incremental"><code>incremental</code></a></h3>
 <p>Whether to include an incremental build in <code>otaDir</code> output</p>
-<p><em>Default</em>: <code>false</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/release.nix">modules/release.nix</a></p>
 <h3 id="kernelbuilddatetime"><a class="header" href="#kernelbuilddatetime"><code>kernel.buildDateTime</code></a></h3>
 <p>Unix time to use for kernel build timestamp</p>
-<p><em>Default</em>: <code>&quot;config.buildDateTime&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"config.buildDateTime\""; }</code></p>
 <p><em>Type</em>: signed integer</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/kernel.nix">modules/kernel.nix</a></p>
 <h3 id="kernelclangversion"><a class="header" href="#kernelclangversion"><code>kernel.clangVersion</code></a></h3>
 <p>Version of prebuilt clang to use for kernel.
-See https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/README.md&quot;</p>
+See https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/README.md“</p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/kernel.nix">modules/kernel.nix</a></p>
 <h3 id="kernelenable"><a class="header" href="#kernelenable"><code>kernel.enable</code></a></h3>
 <p>Whether to enable building custom kernel.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/kernel.nix">modules/kernel.nix</a></p>
 <h3 id="kernelpatches"><a class="header" href="#kernelpatches"><code>kernel.patches</code></a></h3>
 <p>List of patches to apply to kernel source</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of paths</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/kernel.nix">modules/kernel.nix</a></p>
 <h3 id="kernelpostpatch"><a class="header" href="#kernelpostpatch"><code>kernel.postPatch</code></a></h3>
 <p>Commands to run after patching kernel source</p>
-<p><em>Default</em>: <code>&quot;&quot;</code></p>
-<p><em>Type</em>: strings concatenated with &quot;\n&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"\""; }</code></p>
+<p><em>Type</em>: strings concatenated with “\n”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/kernel.nix">modules/kernel.nix</a></p>
 <h3 id="kernelrelpath"><a class="header" href="#kernelrelpath"><code>kernel.relpath</code></a></h3>
@@ -1353,215 +1686,261 @@ See https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/m
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/kernel.nix">modules/kernel.nix</a></p>
 <h3 id="kernelsrc"><a class="header" href="#kernelsrc"><code>kernel.src</code></a></h3>
 <p>Path to kernel source</p>
-<p><em>Type</em>: path</p>
+<p><em>Type</em>: absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/kernel.nix">modules/kernel.nix</a></p>
 <h3 id="microgenable"><a class="header" href="#microgenable"><code>microg.enable</code></a></h3>
 <p>Whether to enable MicroG.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/microg.nix">modules/microg.nix</a></p>
 <h3 id="nixpkgsoverlays"><a class="header" href="#nixpkgsoverlays"><code>nixpkgs.overlays</code></a></h3>
 <p>Nixpkgs overlays to override the default packages used while building robotnix.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of unspecifieds</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of unspecified value</p>
 <p><em>Declared by</em>:</p>
-<h3 id="pixelactiveedgeenable"><a class="header" href="#pixelactiveedgeenable"><code>pixel.activeEdge.enable</code></a></h3>
-<p>Whether to enable Active Edge gestures using the open-source implementation from LineageOS.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
-<p><em>Type</em>: boolean</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pixel/active-edge.nix">modules/pixel/active-edge.nix</a></p>
-<h3 id="pixeluseupstreamdriverbinaries"><a class="header" href="#pixeluseupstreamdriverbinaries"><code>pixel.useUpstreamDriverBinaries</code></a></h3>
-<p>Use device vendor binaries from https://developers.google.com/android/drivers</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Type</em>: boolean</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pixel/driver-binaries.nix">modules/pixel/driver-binaries.nix</a></p>
 <h3 id="productadditionalproductpackages"><a class="header" href="#productadditionalproductpackages"><code>product.additionalProductPackages</code></a></h3>
 <p><code>PRODUCT_PACKAGES</code> to add under <code>product</code> partition.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="productname"><a class="header" href="#productname"><code>productName</code></a></h3>
-<p>Product name for choosecombo/lunch</p>
-<p><em>Default</em>: <code>&quot;${productNamePrefix}${device}&quot;</code></p>
-<p><em>Example</em>: <code>&quot;aosp_crosshatch&quot;</code></p>
+<p>Product name for lunch</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"\\\${productNamePrefix}\\\${device}\""; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"aosp_crosshatch\""}</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="productnameprefix"><a class="header" href="#productnameprefix"><code>productNamePrefix</code></a></h3>
-<p>Prefix for product name used with choosecombo/lunch</p>
-<p><em>Default</em>: <code>&quot;aosp_&quot;</code></p>
+<p>Prefix for product name used with lunch</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"aosp_\""; }</code></p>
+<p><em>Type</em>: string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
+<h3 id="release"><a class="header" href="#release"><code>release</code></a></h3>
+<p>The TARGET_RELEASE argument used with lunch</p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="removedproductpackages"><a class="header" href="#removedproductpackages"><code>removedProductPackages</code></a></h3>
 <p><code>PRODUCT_PACKAGES</code> to remove from build</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="resources-1"><a class="header" href="#resources-1"><code>resources</code></a></h3>
 <p>Additional package resources to include. The first key refers to the relative path for the package, and the second key refers to the resource name</p>
-<p><em>Default</em>: <code>{ }</code></p>
-<p><em>Example</em>: <code>{&quot;_type&quot;:&quot;literalExpression&quot;,&quot;text&quot;:&quot;{ \&quot;frameworks/base/core/res\&quot;.config_enableAutoPowerModes = true; }&quot;}</code></p>
-<p><em>Type</em>: attribute set of attribute set of boolean or signed integer or string or list of string or signed integers or submoduless</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "{ }"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"{\n  \"frameworks/base/core/res\" = {\n    config_enableAutoPowerModes = true;\n  };\n}"}</code></p>
+<p><em>Type</em>: attribute set of attribute set of (boolean or signed integer or string or list of (string or signed integer) or (submodule))</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/resources.nix">modules/resources.nix</a></p>
 <h3 id="retrofit"><a class="header" href="#retrofit"><code>retrofit</code></a></h3>
 <p>Generate a retrofit OTA for upgrading a device without dynamic partitions.
 See also https://source.android.com/devices/tech/ota/dynamic_partitions/ab_legacy#generating-update-packages</p>
-<p><em>Default</em>: <code>false</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/release.nix">modules/release.nix</a></p>
 <h3 id="securitypkicertificatefiles"><a class="header" href="#securitypkicertificatefiles"><code>security.pki.certificateFiles</code></a></h3>
 <p>A list of files containing trusted root certificates in PEM format.  These are added as system-level trust anchors.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of paths</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/security-pki.nix">modules/security-pki.nix</a></p>
 <h3 id="signingapexenable"><a class="header" href="#signingapexenable"><code>signing.apex.enable</code></a></h3>
 <p>Whether to enable signing APEX packages.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
 <h3 id="signingapexpackagenames"><a class="header" href="#signingapexpackagenames"><code>signing.apex.packageNames</code></a></h3>
 <p>APEX packages which need to be signed</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
+<h3 id="signingapexflags"><a class="header" href="#signingapexflags"><code>signing.apexFlags</code></a></h3>
+<p>The APEX-related flags to pass to sign_target_files_apks.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
 <h3 id="signingavbenable"><a class="header" href="#signingavbenable"><code>signing.avb.enable</code></a></h3>
 <p>Whether to enable AVB signing.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
-<h3 id="signingavbfingerprint"><a class="header" href="#signingavbfingerprint"><code>signing.avb.fingerprint</code></a></h3>
-<p>SHA256 hash of <code>avb_pkmd.bin</code>. Should be set automatically based on file under <code>keyStorePath</code> if <code>signing.enable = true</code></p>
-<p><em>Type</em>: string matching the pattern [0-9A-F]{64}</p>
+<h3 id="signingavbkey"><a class="header" href="#signingavbkey"><code>signing.avb.key</code></a></h3>
+<p>The identifier of the AVB key to use.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"\\\${config.device}/avb\""; }</code></p>
+<p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
 <h3 id="signingavbmode"><a class="header" href="#signingavbmode"><code>signing.avb.mode</code></a></h3>
 <p>Mode of AVB signing to use.</p>
-<p><em>Default</em>: <code>&quot;vbmeta_chained&quot;</code></p>
-<p><em>Type</em>: one of &quot;verity_only&quot;, &quot;vbmeta_simple&quot;, &quot;vbmeta_chained&quot;, &quot;vbmeta_chained_v2&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"vbmeta_simple\""; }</code></p>
+<p><em>Type</em>: one of “vbmeta_simple”, “vbmeta_chained”, “vbmeta_chained_v2”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
-<h3 id="signingavbveritycert"><a class="header" href="#signingavbveritycert"><code>signing.avb.verityCert</code></a></h3>
-<p>Verity certificate for AVB. e.g. in x509 DER format.x509.pem. Only needed if signing.avb.mode = &quot;verity_only&quot;</p>
-<p><em>Type</em>: path</p>
+<h3 id="signingavbsize"><a class="header" href="#signingavbsize"><code>signing.avb.size</code></a></h3>
+<p>Size of the SHA256 RSA keys</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "4096"; }</code></p>
+<p><em>Type</em>: signed integer or floating point number</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
-<h3 id="signingbuildtimekeystorepath"><a class="header" href="#signingbuildtimekeystorepath"><code>signing.buildTimeKeyStorePath</code></a></h3>
-<p>Path to generated keys for signing to use at build-time, as opposed to keyStorePath, which is used at evaluation-time.</p>
-<p><em>Type</em>: string or path</p>
+<h3 id="signingextraflags"><a class="header" href="#signingextraflags"><code>signing.extraFlags</code></a></h3>
+<p>Additional non-APK-nor-APEX-related flags to pass to sign_target_files_apks.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
-<h3 id="signingenable"><a class="header" href="#signingenable"><code>signing.enable</code></a></h3>
-<p>Whether to sign build using user-provided keys. Otherwise, build will be signed using insecure test-keys.</p>
-<p><em>Default</em>: <code>false</code></p>
+<h3 id="signingpkcs11certificatelabels"><a class="header" href="#signingpkcs11certificatelabels"><code>signing.pkcs11.certificateLabels</code></a></h3>
+<p>The mapping of robotnix key names (e.g. <code>tegu/releasekey</code>) to
+PKCS#11 certificate labels (CKA_LABEL attribute).</p>
+<p><em>Type</em>: attribute set of string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pkcs11.nix">modules/pkcs11.nix</a></p>
+<h3 id="signingpkcs11enable"><a class="header" href="#signingpkcs11enable"><code>signing.pkcs11.enable</code></a></h3>
+<p>Whether to enable PKCS#11 signing.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
-<h3 id="signingkeystorepath"><a class="header" href="#signingkeystorepath"><code>signing.keyStorePath</code></a></h3>
-<p>String containing absolute path to generated keys for signing.
-This must be a <em>string</em> and not a &quot;nix path&quot; to ensure that your secret keys are not imported into the public <code>/nix/store</code>.</p>
-<p><em>Example</em>: <code>&quot;/var/secrets/android-keys&quot;</code></p>
-<p><em>Type</em>: string</p>
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pkcs11.nix">modules/pkcs11.nix</a></p>
+<h3 id="signingpkcs11module"><a class="header" href="#signingpkcs11module"><code>signing.pkcs11.module</code></a></h3>
+<p>The PKCS#11 shared library to use for signing.</p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"\"\\${pkgs.yubico-piv-tool}/lib/libykcs11.so\""}</code></p>
+<p><em>Type</em>: path in the Nix store</p>
 <p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/signing.nix">modules/signing.nix</a></p>
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pkcs11.nix">modules/pkcs11.nix</a></p>
+<h3 id="signingpkcs11presetsyubikey-pivenable"><a class="header" href="#signingpkcs11presetsyubikey-pivenable"><code>signing.pkcs11.presets.yubikey-piv.enable</code></a></h3>
+<p>Whether to enable the YubiKey PIV PKCS#11 signing preset..</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
+<p><em>Type</em>: boolean</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pkcs11.nix">modules/pkcs11.nix</a></p>
+<h3 id="signingpkcs11presetsyubikey-pivslotmap"><a class="header" href="#signingpkcs11presetsyubikey-pivslotmap"><code>signing.pkcs11.presets.yubikey-piv.slotMap</code></a></h3>
+<p>The YubiKey PIV slots to use for the individual keys.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = ''     '''       {         "'''''${config.device}/releasekey" = "82";         "'''''${config.device}/media" = "83";         "'''''${config.device}/shared" = "84";         "'''''${config.device}/platform" = "85";         "'''''${config.device}/sdk_sandbox" = "86";         "'''''${config.device}/nfc" = "87";         "'''''${config.device}/networkstack" = "88";         "'''''${config.device}/avb" = "89";         # grapheneos gmscompat_lib is mapped to 8a         "'''''${config.device}/bluetooth" = "8b";       }     '''''; }</code></p>
+<p><em>Type</em>: attribute set of string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pkcs11.nix">modules/pkcs11.nix</a></p>
+<h3 id="signingpkcs11privatekeylabels"><a class="header" href="#signingpkcs11privatekeylabels"><code>signing.pkcs11.privateKeyLabels</code></a></h3>
+<p>The mapping of robotnix key names (e.g. <code>tegu/releasekey</code>) to
+PKCS#11 private key labels (CKA_LABEL attribute).</p>
+<p><em>Type</em>: attribute set of string</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/pkcs11.nix">modules/pkcs11.nix</a></p>
 <h3 id="sourcedirs"><a class="header" href="#sourcedirs"><code>source.dirs</code></a></h3>
-<p>Directories to include in Android build process.
-Normally set by the output of <code>mk_repo_file.py</code>.
-However, additional source directories can be added to the build here using this option as well.</p>
-<p><em>Default</em>: <code>{ }</code></p>
-<p><em>Type</em>: attribute set of submodules</p>
+<p>Directories to include in Android build process. Normally set by the entries of the lockfile specificed by <code>source.repoLockfile</code>, but can also be used to add additional directories.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "{ }"; }</code></p>
+<p><em>Type</em>: attribute set of (submodule)</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
+<h3 id="sourcedirsnamecopyfiles"><a class="header" href="#sourcedirsnamecopyfiles"><code>source.dirs.&lt;name&gt;.copyfiles</code></a></h3>
+<p>Files to copy from this source dir elsewhere into the source tree, i.e. the robotnix implementation of the git-repo <code>copyfile</code> tag.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of (submodule)</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
 <h3 id="sourcedirsnameenable"><a class="header" href="#sourcedirsnameenable"><code>source.dirs.&lt;name&gt;.enable</code></a></h3>
 <p>Whether to include this directory in the android build source tree.</p>
-<p><em>Default</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "true"; }</code></p>
 <p><em>Type</em>: boolean</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
+<h3 id="sourcedirsnamelinkfiles"><a class="header" href="#sourcedirsnamelinkfiles"><code>source.dirs.&lt;name&gt;.linkfiles</code></a></h3>
+<p>Symlinks into this source dir to create in the source tree, i.e. the robotnix implementation of the git-repo <code>linkfile</code> tag.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of (submodule)</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
+<h3 id="sourcedirsnamenativebuildinputs"><a class="header" href="#sourcedirsnamenativebuildinputs"><code>source.dirs.&lt;name&gt;.nativeBuildInputs</code></a></h3>
+<p>nativeBuildInputs to be made available during the execution of postPatch</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of package</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
 <h3 id="sourcedirsnamepatches"><a class="header" href="#sourcedirsnamepatches"><code>source.dirs.&lt;name&gt;.patches</code></a></h3>
 <p>Patches to apply to source directory.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of paths</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
 <h3 id="sourcedirsnamepostpatch"><a class="header" href="#sourcedirsnamepostpatch"><code>source.dirs.&lt;name&gt;.postPatch</code></a></h3>
 <p>Additional commands to run after patching source directory.</p>
-<p><em>Default</em>: <code>&quot;&quot;</code></p>
-<p><em>Type</em>: strings concatenated with &quot;\n&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"\""; }</code></p>
+<p><em>Type</em>: strings concatenated with “\n”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
 <h3 id="sourcedirsnamerelpath"><a class="header" href="#sourcedirsnamerelpath"><code>source.dirs.&lt;name&gt;.relpath</code></a></h3>
 <p>Relative path under android source tree to place this directory. Defaults to attribute name.</p>
-<p><em>Default</em>: <code>&quot;‹name›&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"‹name›\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
 <h3 id="sourcedirsnamesrc"><a class="header" href="#sourcedirsnamesrc"><code>source.dirs.&lt;name&gt;.src</code></a></h3>
 <p>Source to use for this android source directory.</p>
-<p><em>Default</em>: <code>&lt;derivation empty&gt;</code></p>
-<p><em>Type</em>: path</p>
-<p><em>Declared by</em>:
-<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
-<h3 id="sourceevaltimefetching"><a class="header" href="#sourceevaltimefetching"><code>source.evalTimeFetching</code></a></h3>
-<p>Set config.source.dirs automatically using IFD with information from <code>source.manifest</code>.
-Also enables use of <code>builtins.fetchGit</code> instead of <code>pkgs.fetchgit</code> if not all sha256 hashes are available.
-(Can be useful for development, but not recommended normally)</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Type</em>: unspecified</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "&lt;derivation empty&gt;"; }</code></p>
+<p><em>Type</em>: absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
 <h3 id="sourceexcludegroups"><a class="header" href="#sourceexcludegroups"><code>source.excludeGroups</code></a></h3>
 <p>Project groups to exclude from source tree</p>
-<p><em>Default</em>: <code>[ &quot;darwin&quot; &quot;mips&quot; ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = ''     [       "darwin"       "mips"     ]''; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
 <h3 id="sourceincludegroups"><a class="header" href="#sourceincludegroups"><code>source.includeGroups</code></a></h3>
 <p>Project groups to include in source tree (overrides <code>excludeGroups</code>)</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
-<h3 id="sourcemanifestrev"><a class="header" href="#sourcemanifestrev"><code>source.manifest.rev</code></a></h3>
-<p>Revision/tag to use from repo manifest repository.</p>
-<p><em>Type</em>: string</p>
+<h3 id="sourcemanifestcategories"><a class="header" href="#sourcemanifestcategories"><code>source.manifest.categories</code></a></h3>
+<p><code>repo2nix</code> project categories to include from the manifest.</p>
+<p><em>Type</em>: list of (string or attribute set of string)</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
-<h3 id="sourcemanifestsha256"><a class="header" href="#sourcemanifestsha256"><code>source.manifest.sha256</code></a></h3>
-<p>Nix sha256 hash of repo manifest repository.</p>
-<p><em>Type</em>: string</p>
+<h3 id="sourcemanifestenable"><a class="header" href="#sourcemanifestenable"><code>source.manifest.enable</code></a></h3>
+<p>Whether to import the source dirs from a git-repo lockfile.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
-<h3 id="sourcemanifesturl"><a class="header" href="#sourcemanifesturl"><code>source.manifest.url</code></a></h3>
-<p>URL to repo manifest repository. Not necessary to set if using <code>source.dirs</code> directly.</p>
-<p><em>Type</em>: string</p>
+<h3 id="sourcemanifestlockfile"><a class="header" href="#sourcemanifestlockfile"><code>source.manifest.lockfile</code></a></h3>
+<p>git-repo manifest lockfile as generated by <code>repo-tool fetch</code>.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "null"; }</code></p>
+<p><em>Type</em>: null or absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/source.nix">modules/source.nix</a></p>
+<h3 id="stateversion"><a class="header" href="#stateversion"><code>stateVersion</code></a></h3>
+<p>Analogously to the NixOS option <code>system.stateVersion</code>, this option
+tells the robotnix build what kind of state to expect to the device.
+Once you have flashed a robotnix build with some specific
+<code>stateVersion</code> to your device, <code>stateVersion</code> should be kept constant
+until you entirely wipe and re-flash the device.</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"3\""; }</code></p>
+<p><em>Type</em>: one of “1”, “2”, “3”</p>
+<p><em>Declared by</em>:
+<a href="https://github.com/danielfullmer/robotnix/blob/master/modules/state-version.nix">modules/state-version.nix</a></p>
 <h3 id="systemadditionalproductpackages"><a class="header" href="#systemadditionalproductpackages"><code>system.additionalProductPackages</code></a></h3>
 <p><code>PRODUCT_PACKAGES</code> to add under <code>system</code> partition.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="usereproducibilityfixes"><a class="header" href="#usereproducibilityfixes"><code>useReproducibilityFixes</code></a></h3>
 <p>Apply additional fixes for reproducibility</p>
-<p><em>Default</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "true"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
@@ -1569,46 +1948,46 @@ Also enables use of <code>builtins.fetchGit</code> instead of <code>pkgs.fetchgi
 <p><code>user</code> has limited access and is suited for production.
 <code>userdebug</code> is like user but with root access and debug capability.
 <code>eng</code> is the development configuration with additional debugging tools.</p>
-<p><em>Default</em>: <code>&quot;user&quot;</code></p>
-<p><em>Type</em>: one of &quot;user&quot;, &quot;userdebug&quot;, &quot;eng&quot;</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"user\""; }</code></p>
+<p><em>Type</em>: one of “user”, “userdebug”, “eng”</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="vendoradditionalproductpackages"><a class="header" href="#vendoradditionalproductpackages"><code>vendor.additionalProductPackages</code></a></h3>
 <p><code>PRODUCT_PACKAGES</code> to add under <code>vendor</code> partition.</p>
-<p><em>Default</em>: <code>[ ]</code></p>
-<p><em>Type</em>: list of strings</p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "[ ]"; }</code></p>
+<p><em>Type</em>: list of string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/base.nix">modules/base.nix</a></p>
 <h3 id="webview"><a class="header" href="#webview"><code>webview</code></a></h3>
 <p>Webview providers to include in Android build. Pre-specified options are <code>chromium</code>, <code>bromite</code>, and <code>vanadium</code>.</p>
-<p><em>Example</em>: <code>{&quot;_type&quot;:&quot;literalExpression&quot;,&quot;text&quot;:&quot;{ bromite.enable = true; }&quot;}</code></p>
-<p><em>Type</em>: attribute set of submodules</p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"{\n  bromite = {\n    enable = true;\n  };\n}"}</code></p>
+<p><em>Type</em>: attribute set of (submodule)</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/webview.nix">modules/webview.nix</a></p>
 <h3 id="webviewnameapk"><a class="header" href="#webviewnameapk"><code>webview.&lt;name&gt;.apk</code></a></h3>
 <p>APK file containing webview package.</p>
-<p><em>Type</em>: path</p>
+<p><em>Type</em>: absolute path</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/webview.nix">modules/webview.nix</a></p>
 <h3 id="webviewnameavailablebydefault"><a class="header" href="#webviewnameavailablebydefault"><code>webview.&lt;name&gt;.availableByDefault</code></a></h3>
 <p>If <code>true</code>, this provider can be automatically selected by the
-framework, if it's the first valid choice. If <code>false</code>, this
+framework, if it’s the first valid choice. If <code>false</code>, this
 provider will only be used if the user selects it themselves from
 the developer settings menu.</p>
-<p><em>Default</em>: <code>false</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/webview.nix">modules/webview.nix</a></p>
 <h3 id="webviewnamedescription"><a class="header" href="#webviewnamedescription"><code>webview.&lt;name&gt;.description</code></a></h3>
 <p>The name shown to the user in the developer settings menu.</p>
-<p><em>Default</em>: <code>&quot;Android System WebView&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"Android System WebView\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/webview.nix">modules/webview.nix</a></p>
 <h3 id="webviewnameenable"><a class="header" href="#webviewnameenable"><code>webview.&lt;name&gt;.enable</code></a></h3>
 <p>Whether to enable ‹name› webview.</p>
-<p><em>Default</em>: <code>false</code></p>
-<p><em>Example</em>: <code>true</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
+<p><em>Example</em>: <code>{"_type":"literalExpression","text":"true"}</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/webview.nix">modules/webview.nix</a></p>
@@ -1617,13 +1996,13 @@ the developer settings menu.</p>
 framework, preventing it from being used or updated by app
 stores, unless there is no other valid provider available.  Only
 one provider can be a fallback.</p>
-<p><em>Default</em>: <code>false</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "false"; }</code></p>
 <p><em>Type</em>: boolean</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/webview.nix">modules/webview.nix</a></p>
 <h3 id="webviewnamepackagename"><a class="header" href="#webviewnamepackagename"><code>webview.&lt;name&gt;.packageName</code></a></h3>
 <p>The Android package name of the APK.</p>
-<p><em>Default</em>: <code>&quot;com.android.webview&quot;</code></p>
+<p><em>Default</em>: <code>{   _type = "literalExpression";   text = "\"com.android.webview\""; }</code></p>
 <p><em>Type</em>: string</p>
 <p><em>Declared by</em>:
 <a href="https://github.com/danielfullmer/robotnix/blob/master/modules/webview.nix">modules/webview.nix</a></p>
@@ -1632,42 +2011,49 @@ one provider can be a fallback.</p>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-                        
+
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-                            </nav>
+
+            </nav>
 
         </div>
 
-        
-        
-        
-                <script type="text/javascript">
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        
-        
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
-        
-                        <script type="text/javascript">
+
+        <script>
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
-                
+
+
+    </div>
     </body>
 </html>
