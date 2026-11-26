@@ -59,6 +59,12 @@
       packages.x86_64-linux = {
         manual = (import ./docs { inherit pkgs; }).manual;
         gitRepo = pkgs.gitRepo;
+        repo2nix = pkgs.callPackage ./pkgs/repo2nix/default.nix {};
+      };
+
+      apps.x86_64-linux.repo-tool = {
+        type = "app";
+        program = "${self.packages.x86_64-linux.repo2nix}/bin/repo-tool";
       };
 
       devShells.x86_64-linux = rec {
@@ -71,6 +77,7 @@
             pkg-config
             openssl
             (callPackage ./pkgs/fetchgit/nix-prefetch-git.nix { })
+            self.packages.x86_64-linux.repo2nix
           ];
         };
       };
